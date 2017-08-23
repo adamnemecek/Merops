@@ -1,0 +1,40 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/_usd.dir/module.cpp.o"
+  "CMakeFiles/_usd.dir/wrapAttribute.cpp.o"
+  "CMakeFiles/_usd.dir/wrapAttributeQuery.cpp.o"
+  "CMakeFiles/_usd.dir/wrapClipsAPI.cpp.o"
+  "CMakeFiles/_usd.dir/wrapCommon.cpp.o"
+  "CMakeFiles/_usd.dir/wrapCrateInfo.cpp.o"
+  "CMakeFiles/_usd.dir/wrapEditContext.cpp.o"
+  "CMakeFiles/_usd.dir/wrapEditTarget.cpp.o"
+  "CMakeFiles/_usd.dir/wrapInherits.cpp.o"
+  "CMakeFiles/_usd.dir/wrapInterpolation.cpp.o"
+  "CMakeFiles/_usd.dir/wrapModelAPI.cpp.o"
+  "CMakeFiles/_usd.dir/wrapNotice.cpp.o"
+  "CMakeFiles/_usd.dir/wrapObject.cpp.o"
+  "CMakeFiles/_usd.dir/wrapPrim.cpp.o"
+  "CMakeFiles/_usd.dir/wrapPrimFlags.cpp.o"
+  "CMakeFiles/_usd.dir/wrapPrimRange.cpp.o"
+  "CMakeFiles/_usd.dir/wrapProperty.cpp.o"
+  "CMakeFiles/_usd.dir/wrapReferences.cpp.o"
+  "CMakeFiles/_usd.dir/wrapRelationship.cpp.o"
+  "CMakeFiles/_usd.dir/wrapResolveInfo.cpp.o"
+  "CMakeFiles/_usd.dir/wrapSchemaBase.cpp.o"
+  "CMakeFiles/_usd.dir/wrapSchemaRegistry.cpp.o"
+  "CMakeFiles/_usd.dir/wrapSpecializes.cpp.o"
+  "CMakeFiles/_usd.dir/wrapStage.cpp.o"
+  "CMakeFiles/_usd.dir/wrapStageCache.cpp.o"
+  "CMakeFiles/_usd.dir/wrapStageCacheContext.cpp.o"
+  "CMakeFiles/_usd.dir/wrapStagePopulationMask.cpp.o"
+  "CMakeFiles/_usd.dir/wrapTimeCode.cpp.o"
+  "CMakeFiles/_usd.dir/wrapTyped.cpp.o"
+  "CMakeFiles/_usd.dir/wrapUtils.cpp.o"
+  "CMakeFiles/_usd.dir/wrapVariantSets.cpp.o"
+  "_usd.pdb"
+  "_usd.so"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/_usd.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

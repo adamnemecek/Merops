@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/opt/local/USD/include/OpenEXR/half.h
+halfExport.h
+/opt/local/USD/include/OpenEXR/halfExport.h
+iostream
+-
+
+/opt/local/USD/include/OpenEXR/halfExport.h
+
+/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImf/b44ExpLogTable.cpp
+half.h
+-
+math.h
+-
+iostream
+-
+iomanip
+-
+

@@ -1,0 +1,3 @@
+github "Alamofire/Alamofire"
+github "SwiftGit2/SwiftGit2"
+github "SwifterSwift/SwifterSwift" ~> 1.5

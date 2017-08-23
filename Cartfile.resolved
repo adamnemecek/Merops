@@ -1,0 +1,4 @@
+github "Alamofire/Alamofire" "4.5.0"
+github "antitypical/Result" "3.2.3"
+github "SwifterSwift/SwifterSwift" "1.6.4"
+github "SwiftGit2/SwiftGit2" "v0.3"

@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "../../../../include/pxr/usd/usdLux/api.h"
+  "../../../../include/pxr/usd/usdLux/blackbody.h"
+  "../../../../include/pxr/usd/usdLux/diskLight.h"
+  "../../../../include/pxr/usd/usdLux/distantLight.h"
+  "../../../../include/pxr/usd/usdLux/domeLight.h"
+  "../../../../include/pxr/usd/usdLux/geometryLight.h"
+  "../../../../include/pxr/usd/usdLux/light.h"
+  "../../../../include/pxr/usd/usdLux/listAPI.h"
+  "../../../../include/pxr/usd/usdLux/linkingAPI.h"
+  "../../../../include/pxr/usd/usdLux/shapingAPI.h"
+  "../../../../include/pxr/usd/usdLux/shadowAPI.h"
+  "../../../../include/pxr/usd/usdLux/lightFilter.h"
+  "../../../../include/pxr/usd/usdLux/lightPortal.h"
+  "../../../../include/pxr/usd/usdLux/rectLight.h"
+  "../../../../include/pxr/usd/usdLux/sphereLight.h"
+  "../../../../include/pxr/usd/usdLux/tokens.h"
+  "CMakeFiles/usdLux.dir/moduleDeps.cpp.o"
+  "CMakeFiles/usdLux.dir/blackbody.cpp.o"
+  "CMakeFiles/usdLux.dir/diskLight.cpp.o"
+  "CMakeFiles/usdLux.dir/distantLight.cpp.o"
+  "CMakeFiles/usdLux.dir/domeLight.cpp.o"
+  "CMakeFiles/usdLux.dir/geometryLight.cpp.o"
+  "CMakeFiles/usdLux.dir/light.cpp.o"
+  "CMakeFiles/usdLux.dir/listAPI.cpp.o"
+  "CMakeFiles/usdLux.dir/linkingAPI.cpp.o"
+  "CMakeFiles/usdLux.dir/shapingAPI.cpp.o"
+  "CMakeFiles/usdLux.dir/shadowAPI.cpp.o"
+  "CMakeFiles/usdLux.dir/lightFilter.cpp.o"
+  "CMakeFiles/usdLux.dir/lightPortal.cpp.o"
+  "CMakeFiles/usdLux.dir/rectLight.cpp.o"
+  "CMakeFiles/usdLux.dir/sphereLight.cpp.o"
+  "CMakeFiles/usdLux.dir/tokens.cpp.o"
+  "libusdLux.pdb"
+  "libusdLux.dylib"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/usdLux.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

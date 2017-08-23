@@ -1,0 +1,8 @@
+/opt/local/USD/lib/libz.1.2.11.dylib
+/opt/local/USD/lib/libz.1.dylib
+/opt/local/USD/lib/libz.dylib
+/opt/local/USD/lib/libz.a
+/opt/local/USD/include/zconf.h
+/opt/local/USD/include/zlib.h
+/opt/local/USD/share/man/man3/zlib.3
+/opt/local/USD/share/pkgconfig/zlib.pc

@@ -1,0 +1,84 @@
+2017-08-03 23:42
+cmake -DCMAKE_INSTALL_PREFIX="/opt/local/USD" -DCMAKE_PREFIX_PATH="/opt/local/USD" -DCMAKE_MACOSX_RPATH=ON   "/opt/local/USD/src/zlib-1.2.11"
+-- The C compiler identification is AppleClang 8.1.0.8020042
+-- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
+-- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of off64_t
+-- Check size of off64_t - failed
+-- Looking for fseeko
+-- Looking for fseeko - found
+-- Looking for unistd.h
+-- Looking for unistd.h - found
+-- Renaming
+--     /opt/local/USD/src/zlib-1.2.11/zconf.h
+-- to 'zconf.h.included' because this file is included with zlib
+-- but CMake generates it automatically in the build directory.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /opt/local/USD/build/zlib-1.2.11
+2017-08-03 23:42
+cmake --build . --config Release --target install -- -j4
+Scanning dependencies of target zlib
+Scanning dependencies of target zlibstatic
+[ 11%] Building C object CMakeFiles/zlibstatic.dir/compress.o
+[ 11%] Building C object CMakeFiles/zlib.dir/adler32.o
+[ 11%] Building C object CMakeFiles/zlib.dir/compress.o
+[ 11%] Building C object CMakeFiles/zlibstatic.dir/adler32.o
+[ 16%] Building C object CMakeFiles/zlib.dir/crc32.o
+[ 16%] Building C object CMakeFiles/zlibstatic.dir/crc32.o
+[ 19%] Building C object CMakeFiles/zlibstatic.dir/deflate.o
+[ 22%] Building C object CMakeFiles/zlibstatic.dir/gzclose.o
+[ 25%] Building C object CMakeFiles/zlibstatic.dir/gzlib.o
+[ 27%] Building C object CMakeFiles/zlib.dir/deflate.o
+[ 30%] Building C object CMakeFiles/zlibstatic.dir/gzread.o
+[ 33%] Building C object CMakeFiles/zlibstatic.dir/gzwrite.o
+[ 36%] Building C object CMakeFiles/zlibstatic.dir/inflate.o
+[ 38%] Building C object CMakeFiles/zlibstatic.dir/infback.o
+[ 41%] Building C object CMakeFiles/zlib.dir/gzclose.o
+[ 44%] Building C object CMakeFiles/zlibstatic.dir/inftrees.o
+[ 47%] Building C object CMakeFiles/zlibstatic.dir/inffast.o
+[ 50%] Building C object CMakeFiles/zlib.dir/gzlib.o
+[ 52%] Building C object CMakeFiles/zlibstatic.dir/trees.o
+[ 55%] Building C object CMakeFiles/zlibstatic.dir/uncompr.o
+[ 61%] Building C object CMakeFiles/zlibstatic.dir/zutil.o
+[ 61%] Building C object CMakeFiles/zlib.dir/gzread.o
+[ 63%] Building C object CMakeFiles/zlib.dir/gzwrite.o
+[ 66%] Building C object CMakeFiles/zlib.dir/inflate.o
+[ 69%] Linking C static library libz.a
+[ 72%] Building C object CMakeFiles/zlib.dir/infback.o
+[ 75%] Building C object CMakeFiles/zlib.dir/inftrees.o
+[ 75%] Built target zlibstatic
+[ 77%] Building C object CMakeFiles/zlib.dir/inffast.o
+[ 80%] Building C object CMakeFiles/zlib.dir/trees.o
+[ 83%] Building C object CMakeFiles/zlib.dir/uncompr.o
+[ 86%] Building C object CMakeFiles/zlib.dir/zutil.o
+[ 88%] Linking C shared library libz.dylib
+[ 88%] Built target zlib
+Scanning dependencies of target example
+Scanning dependencies of target minigzip
+[ 94%] Building C object CMakeFiles/minigzip.dir/test/minigzip.o
+[ 94%] Building C object CMakeFiles/example.dir/test/example.o
+[ 97%] Linking C executable minigzip
+[100%] Linking C executable example
+[100%] Built target minigzip
+[100%] Built target example
+Install the project...
+-- Install configuration: ""
+-- Installing: /opt/local/USD/lib/libz.1.2.11.dylib
+-- Installing: /opt/local/USD/lib/libz.1.dylib
+-- Installing: /opt/local/USD/lib/libz.dylib
+-- Installing: /opt/local/USD/lib/libz.a
+-- Installing: /opt/local/USD/include/zconf.h
+-- Installing: /opt/local/USD/include/zlib.h
+-- Installing: /opt/local/USD/share/man/man3/zlib.3
+-- Installing: /opt/local/USD/share/pkgconfig/zlib.pc
