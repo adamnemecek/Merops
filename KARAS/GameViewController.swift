@@ -14,11 +14,6 @@ class GameViewController: SuperViewController {
     
     @IBOutlet weak var gameView: GameView!
     let sg = NSPanGestureRecognizer()
-//    NSClickGestureRecognizer()
-//    NSMagnificationGestureRecognizer()
-//    NSPanGestureRecognizer()
-//    NSPressGestureRecognizer()
-//    NSRotationGestureRecognizer()
     
     override func awakeFromNib(){
         super.awakeFromNib()
@@ -27,19 +22,35 @@ class GameViewController: SuperViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         sceneInit()
-        
-        // Gesture Event
-//        sg.isEnabled = true
-//        sg.target = self
-//        sg.action = #selector(pan(_:))
-//        self.view.addGestureRecognizer(sg)
     }
 
     func sceneInit() {
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
         
+         //-----
+         
+         let toz: CGFloat = -2.0 // toz < 0 の範囲で変えてみてください
+         
+         let zpercurve = (toz)/4.0
+         let bezierCircle: CGFloat = CGFloat((sqrtf(2) - 1) * 4 / 3)
+         let taned = (zpercurve * bezierCircle) => {$0>=0 ? $0 : -1 * $0}
+         
+         let path = SCNPath()
+         _ = path.start(from: v(0, 0, 1))
+         .addLine(to: v(0, 0, 0))
+         .addCurve(to: v(-1, 1, zpercurve), control1: v(-1 * bezierCircle, 0, 0), control2: v(-1, 1 - bezierCircle, zpercurve + taned))
+         .addCurve(to: v(0, 2, toz/2.0), control1: v(-1, 1 + bezierCircle, zpercurve - taned), control2: v(-1 * bezierCircle, 2, toz/2))
+         .addCurve(to: v(1, 1, zpercurve * 3.0), control1: v(bezierCircle, 2, toz/2), control2: v(1, 1 + bezierCircle, (zpercurve * 3.0) + taned))
+         .addCurve(to: v(0, 0, toz), control1: v(1, 1 - bezierCircle,  (zpercurve * 3.0) - taned), control2: v(bezierCircle, 0, toz))
+         .addLine(to: v(0, 0, -5))
+         .end()
+         
+         let lineNode = SCNLine(path: path) // このNodeをscene上で表示して見てください。
+//        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let scene = SCNScene()
+        scene.rootNode.addChildNode(SCNNode(geometry: SCNBox(width: 4, height: 4, length: 4, chamferRadius: 0)))
+        scene.rootNode.addChildNode(lineNode)
         // retrieve the ship node
-        let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
+//        let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
         
         // camera
         let camera = createCam()
@@ -60,16 +71,17 @@ class GameViewController: SuperViewController {
         self.gameView.backgroundColor = Color.black
         self.gameView.autoenablesDefaultLighting = true
 
-//        self.gameView.overlaySKScene = GameViewOverlay(size: self.gameView.frame.size)
-//        for i in 0..<4 {
-//            let btn = SKSpriteNode(color: Color(hue: 0, saturation: 0.8, brightness: 1, alpha: 0.8), size: CGSize(width: 20, height: 20))
-//            btn.name = "btn\(i)"
-//            let p = self.gameView.projectPoint(scene.rootNode.presentation.position)
-//            let x = CGFloat(40 * cos(Float(i) * Float(Double.pi) / 2.0)) + p.x
-//            let y = CGFloat(40 * sin(Float(i) * Float(Double.pi) / 2.0)) + p.y
-//            btn.position = CGPoint(x:CGFloat(x), y:self.gameView!.bounds.maxY - CGFloat(y))
-//            self.gameView.overlaySKScene?.addChild(btn)
-//        }
+        self.gameView.overlaySKScene = GameViewOverlay(size: self.gameView.frame.size)
+        for i in 0..<4 {
+            let btn = SKSpriteNode(color: Color(hue: 0, saturation: 0.8, brightness: 1, alpha: 0.8), size: CGSize(width: 20, height: 20))
+            btn.name = "btn\(i)"
+            let p = self.gameView.projectPoint(scene.rootNode.presentation.position)
+            let x = CGFloat(40 * cos(Float(i) * Float(Double.pi) / 2.0)) + p.x
+            let y = CGFloat(40 * sin(Float(i) * Float(Double.pi) / 2.0)) + p.y
+            btn.position = CGPoint(x:CGFloat(x), y:self.gameView!.bounds.maxY - CGFloat(y))
+            self.gameView.overlaySKScene?.addChild(btn)
+        }
+        self.gameView.overlaySKScene?.isUserInteractionEnabled = false
         
         USDExporter.exportAssetFrom(scene: scene)
         USDExporter.exportText()
@@ -123,10 +135,14 @@ class GameViewController: SuperViewController {
             vNode?.childNode(withName: "Face", recursively: true)?.isHidden = true
             
         default:
-            break
+            vNode?.enumerateChildNodes({ child, _ in
+                if (child.name?.starts(with: "vertex_"))!{
+                    child.removeFromParentNode()
+                }
+            })
         }
         
-        // reset emission
+        // reset emissions
         vNode?.enumerateChildNodes({ child, _ in
             if let geo = child.geometry {
                 geo.firstMaterial?.emission.contents = Color.black
@@ -184,8 +200,7 @@ class GameViewController: SuperViewController {
             gameView.setPart(_part: .FaceMode)
             
         case 6: // Z
-//            git reset --hard HEAD
-            break
+            gitRevert()
             
         case 7: // X
             self.gameView.scene?.rootNode.enumerateChildNodes({ child, _ in
@@ -251,7 +266,7 @@ class GameViewController: SuperViewController {
     }
     
     func pan(_ g: GestureRecognizer){
-        let p = g.location(in: self.view)
+        let _ = g.location(in: self.view)
     }
     
 }

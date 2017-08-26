@@ -29,6 +29,7 @@ public class PositionNode: SCNNode {
         super.init()
         super.name = "pos"
         let serialize = false
+        super.renderingOrder = 1
         
         // variable
         let axisLen = SCNFloat(8.0),
@@ -125,6 +126,7 @@ public class RotateNode: SCNNode {
         super.init()
         super.name = "rot"
         let serialize = false
+        super.renderingOrder = 1
         
         let xCircle = SCNTube(innerRadius: 7.9, outerRadius: 8, height: 0.1)
         let yCircle = SCNTube(innerRadius: 7.9, outerRadius: 8, height: 0.1)
@@ -163,6 +165,7 @@ public class ScaleNode: SCNNode {
         super.init()
         super.name = "scl"
         let serialize = false
+        super.renderingOrder = 1
         
         
         // variable

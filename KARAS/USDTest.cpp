@@ -8,4 +8,6 @@
 
 #include "USDTest.hpp"
 
-void test() { /* C++固有の処理 */ }
+void test() {
+    
+}

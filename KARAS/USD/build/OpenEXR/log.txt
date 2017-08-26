@@ -1,477 +1,0 @@
-2017-08-03 23:52
-cmake -DCMAKE_INSTALL_PREFIX="/opt/local/USD" -DCMAKE_PREFIX_PATH="/opt/local/USD" -DCMAKE_MACOSX_RPATH=ON  -DNAMESPACE_VERSIONING=OFF -DILMBASE_PACKAGE_PREFIX="/opt/local/USD" "/opt/local/USD/src/openexr-2.2.0/OpenEXR"
--- The C compiler identification is AppleClang 8.1.0.8020042
--- The CXX compiler identification is AppleClang 8.1.0.8020042
--- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
--- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -- works
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Detecting C compile features
--- Detecting C compile features - done
--- Check for working CXX compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++
--- Check for working CXX compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -- works
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Found ZLIB: /opt/local/USD/lib/libz.dylib (found version "1.2.11") 
-ILMBASE_PACKAGE_PREFIX = /opt/local/USD
--- Performing Test HAVE_GCC_INLINE_ASM_AVX
--- Performing Test HAVE_GCC_INLINE_ASM_AVX - Success
--- Performing Test HAVE_SYSCONF_NPROCESSORS_ONLN
--- Performing Test HAVE_SYSCONF_NPROCESSORS_ONLN - Success
--- Configuring done
--- Generating done
--- Build files have been written to: /opt/local/USD/build/OpenEXR
-2017-08-03 23:52
-cmake --build . --config Release --target install -- -j4
-Scanning dependencies of target b44ExpLogTable
-Scanning dependencies of target dwaLookups
-[  0%] Building CXX object IlmImf/CMakeFiles/b44ExpLogTable.dir/b44ExpLogTable.cpp.o
-[  0%] Building CXX object IlmImf/CMakeFiles/dwaLookups.dir/dwaLookups.cpp.o
-[  1%] Linking CXX executable b44ExpLogTable
-[  1%] Built target b44ExpLogTable
-[  2%] Linking CXX executable dwaLookups
-[  2%] Built target dwaLookups
-[  2%] Generating b44ExpLogTable.h
-[  2%] Generating dwaLookups.h
- Building acceleration for DwaCompressor, 0.00 %       Building acceleration for DwaCompressor, 0.61 %       Building acceleration for DwaCompressor, 1.22 %       Building acceleration for DwaCompressor, 1.83 %       Building acceleration for DwaCompressor, 2.44 %       Building acceleration for DwaCompressor, 3.05 %       Building acceleration for DwaCompressor, 3.66 %       Building acceleration for DwaCompressor, 4.27 %       Building acceleration for DwaCompressor, 4.88 %       Building acceleration for DwaCompressor, 5.49 %       Building acceleration for DwaCompressor, 6.10 %       Building acceleration for DwaCompressor, 6.71 %       Building acceleration for DwaCompressor, 7.32 %       Building acceleration for DwaCompressor, 7.93 %       Building acceleration for DwaCompressor, 8.54 %       Building acceleration for DwaCompressor, 9.16 %       Building acceleration for DwaCompressor, 9.77 %       Building acceleration for DwaCompressor, 10.38 %       Building acceleration for DwaCompressor, 10.99 %       Building acceleration for DwaCompressor, 11.60 %       Building acceleration for DwaCompressor, 12.21 %       Building acceleration for DwaCompressor, 12.82 %       Building acceleration for DwaCompressor, 13.43 %       Building acceleration for DwaCompressor, 14.04 %       Building acceleration for DwaCompressor, 14.65 %       Building acceleration for DwaCompressor, 15.26 %       Building acceleration for DwaCompressor, 15.87 %       Building acceleration for DwaCompressor, 16.48 %       Building acceleration for DwaCompressor, 17.09 %       Building acceleration for DwaCompressor, 17.70 %       Building acceleration for DwaCompressor, 18.31 %       Building acceleration for DwaCompressor, 18.92 %       Building acceleration for DwaCompressor, 19.53 %       Building acceleration for DwaCompressor, 20.14 %       Building acceleration for DwaCompressor, 20.75 %       Building acceleration for DwaCompressor, 21.36 %       Building acceleration for DwaCompressor, 21.97 %       Building acceleration for DwaCompressor, 22.58 %       Building acceleration for DwaCompressor, 23.19 %       Building acceleration for DwaCompressor, 23.80 %       Building acceleration for DwaCompressor, 24.41 %       Building acceleration for DwaCompressor, 25.02 %       Building acceleration for DwaCompressor, 25.63 %       Building acceleration for DwaCompressor, 26.25 %       Building acceleration for DwaCompressor, 26.86 %       Building acceleration for DwaCompressor, 27.47 %       Building acceleration for DwaCompressor, 28.08 %       Building acceleration for DwaCompressor, 28.69 %       Building acceleration for DwaCompressor, 29.30 %       Building acceleration for DwaCompressor, 29.91 %       Building acceleration for DwaCompressor, 30.52 %       Building acceleration for DwaCompressor, 31.13 %       Building acceleration for DwaCompressor, 31.74 %       Building acceleration for DwaCompressor, 32.35 %       Building acceleration for DwaCompressor, 32.96 %       Building acceleration for DwaCompressor, 33.57 %       Building acceleration for DwaCompressor, 34.18 %       Building acceleration for DwaCompressor, 34.79 %       Building acceleration for DwaCompressor, 35.40 %       Building acceleration for DwaCompressor, 36.01 %       Building acceleration for DwaCompressor, 36.62 %       Building acceleration for DwaCompressor, 37.23 %       Building acceleration for DwaCompressor, 37.84 %       Building acceleration for DwaCompressor, 38.45 %       Building acceleration for DwaCompressor, 39.06 %       Building acceleration for DwaCompressor, 39.67 %       Building acceleration for DwaCompressor, 40.28 %       Building acceleration for DwaCompressor, 40.89 %       Building acceleration for DwaCompressor, 41.50 %       Building acceleration for DwaCompressor, 42.11 %       Building acceleration for DwaCompressor, 42.72 %       Building acceleration for DwaCompressor, 43.33 %       Building acceleration for DwaCompressor, 43.95 %       Building acceleration for DwaCompressor, 44.56 %       Building acceleration for DwaCompressor, 45.17 %       Building acceleration for DwaCompressor, 45.78 %       Building acceleration for DwaCompressor, 46.39 %       Building acceleration for DwaCompressor, 47.00 %       Building acceleration for DwaCompressor, 47.61 %       Building acceleration for DwaCompressor, 48.22 %       Building acceleration for DwaCompressor, 48.83 %       Building acceleration for DwaCompressor, 49.44 %       Building acceleration for DwaCompressor, 50.05 %       Building acceleration for DwaCompressor, 50.66 %       Building acceleration for DwaCompressor, 51.27 %       Building acceleration for DwaCompressor, 51.88 %       Building acceleration for DwaCompressor, 52.49 %       Building acceleration for DwaCompressor, 53.10 %       Building acceleration for DwaCompressor, 53.71 %       Building acceleration for DwaCompressor, 54.32 %       Building acceleration for DwaCompressor, 54.93 %       Building acceleration for DwaCompressor, 55.54 %       Building acceleration for DwaCompressor, 56.15 %       Building acceleration for DwaCompressor, 56.76 %       Building acceleration for DwaCompressor, 57.37 %       Building acceleration for DwaCompressor, 57.98 %       Building acceleration for DwaCompressor, 58.59 %       Building acceleration for DwaCompressor, 59.20 %       Building acceleration for DwaCompressor, 59.81 %       Building acceleration for DwaCompressor, 60.42 %       Building acceleration for DwaCompressor, 61.04 %       Building acceleration for DwaCompressor, 61.65 %       Building acceleration for DwaCompressor, 62.26 %       Building acceleration for DwaCompressor, 62.87 %       Building acceleration for DwaCompressor, 63.48 %       Building acceleration for DwaCompressor, 64.09 %       Building acceleration for DwaCompressor, 64.70 %       Building acceleration for DwaCompressor, 65.31 %       Building acceleration for DwaCompressor, 65.92 %       Building acceleration for DwaCompressor, 66.53 %       Building acceleration for DwaCompressor, 67.14 %       Building acceleration for DwaCompressor, 67.75 %       Building acceleration for DwaCompressor, 68.36 %       Building acceleration for DwaCompressor, 68.97 %       Building acceleration for DwaCompressor, 69.58 %       Building acceleration for DwaCompressor, 70.19 %       Building acceleration for DwaCompressor, 70.80 %       Building acceleration for DwaCompressor, 71.41 %       Building acceleration for DwaCompressor, 72.02 %       Building acceleration for DwaCompressor, 72.63 %       Building acceleration for DwaCompressor, 73.24 %       Building acceleration for DwaCompressor, 73.85 %       Building acceleration for DwaCompressor, 74.46 %       Building acceleration for DwaCompressor, 75.07 %       Building acceleration for DwaCompressor, 75.68 %       Building acceleration for DwaCompressor, 76.29 %       Building acceleration for DwaCompressor, 76.90 %       Building acceleration for DwaCompressor, 77.51 %       Building acceleration for DwaCompressor, 78.12 %       Building acceleration for DwaCompressor, 78.74 %       Building acceleration for DwaCompressor, 79.35 %       Building acceleration for DwaCompressor, 79.96 %       Building acceleration for DwaCompressor, 80.57 %       Building acceleration for DwaCompressor, 81.18 %       Building acceleration for DwaCompressor, 81.79 %       Building acceleration for DwaCompressor, 82.40 %       Building acceleration for DwaCompressor, 83.01 %       Building acceleration for DwaCompressor, 83.62 %       Building acceleration for DwaCompressor, 84.23 %       Building acceleration for DwaCompressor, 84.84 %       Building acceleration for DwaCompressor, 85.45 %       Building acceleration for DwaCompressor, 86.06 %       Building acceleration for DwaCompressor, 86.67 %       Building acceleration for DwaCompressor, 87.28 %       Building acceleration for DwaCompressor, 87.89 %       Building acceleration for DwaCompressor, 88.50 %       Building acceleration for DwaCompressor, 89.11 %       Building acceleration for DwaCompressor, 89.72 %       Building acceleration for DwaCompressor, 90.33 %       Building acceleration for DwaCompressor, 90.94 %       Building acceleration for DwaCompressor, 91.55 %       Building acceleration for DwaCompressor, 92.16 %       Building acceleration for DwaCompressor, 92.77 %       Building acceleration for DwaCompressor, 93.38 %       Building acceleration for DwaCompressor, 93.99 %       Building acceleration for DwaCompressor, 94.60 %       Building acceleration for DwaCompressor, 95.21 %       Building acceleration for DwaCompressor, 95.83 %       Building acceleration for DwaCompressor, 96.44 %       Building acceleration for DwaCompressor, 97.05 %       Building acceleration for DwaCompressor, 97.66 %       Building acceleration for DwaCompressor, 98.27 %       Building acceleration for DwaCompressor, 98.88 %       Building acceleration for DwaCompressor, 99.49 %      Scanning dependencies of target IlmImf
-[  3%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfAttribute.cpp.o
-[  4%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfCRgbaFile.cpp.o
-[  4%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfBoxAttribute.cpp.o
-[  4%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfChannelList.cpp.o
-[  5%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfChannelListAttribute.cpp.o
-[  5%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfFloatAttribute.cpp.o
-[  6%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfFrameBuffer.cpp.o
-[  6%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfHeader.cpp.o
-[  7%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfIO.cpp.o
-[  7%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfInputFile.cpp.o
-[  8%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfIntAttribute.cpp.o
-[  8%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfLineOrderAttribute.cpp.o
-[  9%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfMatrixAttribute.cpp.o
-[  9%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfOpaqueAttribute.cpp.o
-[  9%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfOutputFile.cpp.o
-[ 10%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfRgbaFile.cpp.o
-[ 10%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfStringAttribute.cpp.o
-[ 11%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfVecAttribute.cpp.o
-[ 11%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfHuf.cpp.o
-[ 12%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfThreading.cpp.o
-[ 12%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfWav.cpp.o
-[ 13%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfLut.cpp.o
-[ 13%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfCompressor.cpp.o
-[ 14%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfRleCompressor.cpp.o
-[ 14%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfZipCompressor.cpp.o
-[ 15%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfPizCompressor.cpp.o
-[ 15%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfB44Compressor.cpp.o
-[ 16%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfDwaCompressor.cpp.o
-[ 16%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfMisc.cpp.o
-[ 16%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfCompressionAttribute.cpp.o
-[ 17%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfDoubleAttribute.cpp.o
-[ 17%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfConvert.cpp.o
-[ 18%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfPreviewImage.cpp.o
-[ 18%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfPreviewImageAttribute.cpp.o
-[ 19%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfVersion.cpp.o
-[ 19%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfChromaticities.cpp.o
-[ 20%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfChromaticitiesAttribute.cpp.o
-[ 20%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfKeyCode.cpp.o
-[ 21%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfKeyCodeAttribute.cpp.o
-[ 21%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfTimeCode.cpp.o
-[ 22%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfTimeCodeAttribute.cpp.o
-[ 22%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfRational.cpp.o
-[ 23%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfRationalAttribute.cpp.o
-[ 23%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfFramesPerSecond.cpp.o
-[ 23%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfStandardAttributes.cpp.o
-[ 24%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfStdIO.cpp.o
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImf/ImfDwaCompressor.cpp:2386:33: warning: comparison of unsigned expression < 0 is always false [-Wtautological-compare]
-    if (unknownUncompressedSize < 0  || 
-        ~~~~~~~~~~~~~~~~~~~~~~~ ^ ~
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImf/ImfDwaCompressor.cpp:2387:31: warning: comparison of unsigned expression < 0 is always false [-Wtautological-compare]
-        unknownCompressedSize < 0    ||
-        ~~~~~~~~~~~~~~~~~~~~~ ^ ~
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImf/ImfDwaCompressor.cpp:2388:26: warning: comparison of unsigned expression < 0 is always false [-Wtautological-compare]
-        acCompressedSize < 0         || 
-        ~~~~~~~~~~~~~~~~ ^ ~
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImf/ImfDwaCompressor.cpp:2389:26: warning: comparison of unsigned expression < 0 is always false [-Wtautological-compare]
-        dcCompressedSize < 0         ||
-        ~~~~~~~~~~~~~~~~ ^ ~
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImf/ImfDwaCompressor.cpp:2390:27: warning: comparison of unsigned expression < 0 is always false [-Wtautological-compare]
-        rleCompressedSize < 0        || 
-        ~~~~~~~~~~~~~~~~~ ^ ~
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImf/ImfDwaCompressor.cpp:2391:29: warning: comparison of unsigned expression < 0 is always false [-Wtautological-compare]
-        rleUncompressedSize < 0      ||
-        ~~~~~~~~~~~~~~~~~~~ ^ ~
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImf/ImfDwaCompressor.cpp:2392:20: warning: comparison of unsigned expression < 0 is always false [-Wtautological-compare]
-        rleRawSize < 0               ||  
-        ~~~~~~~~~~ ^ ~
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImf/ImfDwaCompressor.cpp:2393:34: warning: comparison of unsigned expression < 0 is always false [-Wtautological-compare]
-        totalAcUncompressedCount < 0 || 
-        ~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImf/ImfDwaCompressor.cpp:2394:34: warning: comparison of unsigned expression < 0 is always false [-Wtautological-compare]
-        totalDcUncompressedCount < 0) 
-        ~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImf/ImfDwaCompressor.cpp:2485:18: warning: comparison of unsigned expression < 0 is always false [-Wtautological-compare]
-    if ((version < 0) || (version > 2))
-         ~~~~~~~ ^ ~
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImf/ImfDwaCompressor.cpp:2499:37: warning: comparison of unsigned expression < 0 is always false [-Wtautological-compare]
-        if (unknownUncompressedSize < 0 || 
-            ~~~~~~~~~~~~~~~~~~~~~~~ ^ ~
-[ 24%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfEnvmap.cpp.o
-[ 25%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfEnvmapAttribute.cpp.o
-[ 25%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfScanLineInputFile.cpp.o
-[ 26%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfTiledInputFile.cpp.o
-[ 26%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfTiledMisc.cpp.o
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImf/ImfScanLineInputFile.cpp:1408:22: warning: enumeration value 'NUM_PIXELTYPES' not handled in switch [-Wswitch]
-              switch(i.channel().type)
-                     ^
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImf/ImfScanLineInputFile.cpp:1478:22: warning: enumeration value 'NUM_PIXELTYPES' not handled in switch [-Wswitch]
-              switch(i.channel().type)
-                     ^
-[ 27%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfTiledOutputFile.cpp.o
-[ 27%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfTiledRgbaFile.cpp.o
-11 warnings generated.
-2 warnings generated.
-[ 28%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfTileDescriptionAttribute.cpp.o
-[ 28%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfTileOffsets.cpp.o
-[ 29%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfRgbaYca.cpp.o
-[ 29%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfPxr24Compressor.cpp.o
-[ 30%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfTestFile.cpp.o
-[ 30%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfStringVectorAttribute.cpp.o
-[ 30%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfMultiView.cpp.o
-[ 31%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfAcesFile.cpp.o
-[ 31%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfMultiPartOutputFile.cpp.o
-[ 32%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfGenericOutputFile.cpp.o
-[ 32%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfOutputPartData.cpp.o
-[ 33%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfMultiPartInputFile.cpp.o
-[ 33%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfGenericInputFile.cpp.o
-[ 34%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfPartType.cpp.o
-[ 34%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfInputPartData.cpp.o
-[ 35%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfOutputPart.cpp.o
-[ 35%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfTiledOutputPart.cpp.o
-[ 36%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfInputPart.cpp.o
-[ 36%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfTiledInputPart.cpp.o
-[ 37%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfDeepScanLineInputPart.cpp.o
-[ 37%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfDeepScanLineOutputPart.cpp.o
-[ 37%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfDeepScanLineInputFile.cpp.o
-[ 38%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfDeepScanLineOutputFile.cpp.o
-[ 38%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfDeepTiledInputPart.cpp.o
-[ 39%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfDeepTiledOutputPart.cpp.o
-[ 39%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfDeepTiledInputFile.cpp.o
-[ 40%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfDeepTiledOutputFile.cpp.o
-[ 40%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfDeepFrameBuffer.cpp.o
-[ 41%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfDeepCompositing.cpp.o
-[ 41%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfCompositeDeepScanLine.cpp.o
-[ 42%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfDeepImageStateAttribute.cpp.o
-[ 42%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfFastHuf.cpp.o
-[ 43%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfFloatVectorAttribute.cpp.o
-[ 43%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfRle.cpp.o
-[ 44%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfSystemSpecific.cpp.o
-[ 44%] Building CXX object IlmImf/CMakeFiles/IlmImf.dir/ImfZip.cpp.o
-[ 44%] Linking CXX shared library libIlmImf.dylib
-[ 44%] Built target IlmImf
-Scanning dependencies of target IlmImfExamples
-Scanning dependencies of target IlmImfFuzzTest
-Scanning dependencies of target IlmImfUtil
-[ 44%] Building CXX object IlmImfFuzzTest/CMakeFiles/IlmImfFuzzTest.dir/fuzzFile.cpp.o
-[ 45%] Building CXX object IlmImfExamples/CMakeFiles/IlmImfExamples.dir/drawImage.cpp.o
-[ 45%] Building CXX object IlmImfUtil/CMakeFiles/IlmImfUtil.dir/ImfImageChannel.cpp.o
-Scanning dependencies of target IlmImfTest
-[ 45%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/compareB44.cpp.o
-[ 45%] Building CXX object IlmImfExamples/CMakeFiles/IlmImfExamples.dir/generalInterfaceExamples.cpp.o
-[ 46%] Building CXX object IlmImfUtil/CMakeFiles/IlmImfUtil.dir/ImfFlatImageChannel.cpp.o
-[ 47%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/compareDwa.cpp.o
-[ 48%] Building CXX object IlmImfFuzzTest/CMakeFiles/IlmImfFuzzTest.dir/main.cpp.o
-[ 48%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/compareFloat.cpp.o
-[ 48%] Building CXX object IlmImfFuzzTest/CMakeFiles/IlmImfFuzzTest.dir/testFuzzDeepTiles.cpp.o
-[ 49%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/main.cpp.o
-[ 49%] Building CXX object IlmImfUtil/CMakeFiles/IlmImfUtil.dir/ImfDeepImageChannel.cpp.o
-[ 50%] Building CXX object IlmImfExamples/CMakeFiles/IlmImfExamples.dir/generalInterfaceTiledExamples.cpp.o
-[ 50%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testAttributes.cpp.o
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImfFuzzTest/testFuzzDeepTiles.cpp:220:29: warning: cannot delete expression with pointer-to-'void' type 'void *' [-Wdelete-incomplete]
-                            delete data[k][y][x];
-                            ^      ~~~~~~~~~~~~~
-[ 50%] Building CXX object IlmImfUtil/CMakeFiles/IlmImfUtil.dir/ImfSampleCountChannel.cpp.o
-1 warning generated.
-[ 50%] Building CXX object IlmImfExamples/CMakeFiles/IlmImfExamples.dir/lowLevelIoExamples.cpp.o
-[ 51%] Building CXX object IlmImfFuzzTest/CMakeFiles/IlmImfFuzzTest.dir/testFuzzDeepScanLines.cpp.o
-[ 52%] Building CXX object IlmImfUtil/CMakeFiles/IlmImfUtil.dir/ImfImageLevel.cpp.o
-[ 53%] Building CXX object IlmImfExamples/CMakeFiles/IlmImfExamples.dir/main.cpp.o
-[ 53%] Building CXX object IlmImfFuzzTest/CMakeFiles/IlmImfFuzzTest.dir/testFuzzScanLines.cpp.o
-[ 54%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testBackwardCompatibility.cpp.o
-[ 54%] Building CXX object IlmImfExamples/CMakeFiles/IlmImfExamples.dir/previewImageExamples.cpp.o
-[ 54%] Building CXX object IlmImfUtil/CMakeFiles/IlmImfUtil.dir/ImfFlatImageLevel.cpp.o
-[ 55%] Building CXX object IlmImfFuzzTest/CMakeFiles/IlmImfFuzzTest.dir/testFuzzTiles.cpp.o
-[ 56%] Building CXX object IlmImfExamples/CMakeFiles/IlmImfExamples.dir/rgbaInterfaceExamples.cpp.o
-[ 57%] Building CXX object IlmImfUtil/CMakeFiles/IlmImfUtil.dir/ImfDeepImageLevel.cpp.o
-[ 57%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testBadTypeAttributes.cpp.o
-[ 57%] Linking CXX executable IlmImfFuzzTest
-[ 57%] Building CXX object IlmImfExamples/CMakeFiles/IlmImfExamples.dir/rgbaInterfaceTiledExamples.cpp.o
-[ 57%] Built target IlmImfFuzzTest
-Scanning dependencies of target exrheader
-[ 57%] Building CXX object exrheader/CMakeFiles/exrheader.dir/main.cpp.o
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImfTest/testBadTypeAttributes.cpp:113:12: warning: enumeration value 'NUM_LEVELMODES' not handled in switch [-Wswitch]
-    switch(t.mode)
-           ^
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImfTest/testBadTypeAttributes.cpp:113:12: warning: enumeration value 'NUM_LEVELMODES' not handled in switch [-Wswitch]
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImfTest/testBadTypeAttributes.cpp:113:12: warning: enumeration value 'NUM_LEVELMODES' not handled in switch [-Wswitch]
-3 warnings generated.
-[ 58%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testChannels.cpp.o
-[ 58%] Building CXX object IlmImfUtil/CMakeFiles/IlmImfUtil.dir/ImfImage.cpp.o
-[ 59%] Linking CXX executable IlmImfExamples
-[ 59%] Built target IlmImfExamples
-Scanning dependencies of target exrmaketiled
-[ 59%] Building CXX object exrmaketiled/CMakeFiles/exrmaketiled.dir/makeTiled.cpp.o
-[ 59%] Linking CXX executable exrheader
-[ 59%] Built target exrheader
-[ 60%] Building CXX object IlmImfUtil/CMakeFiles/IlmImfUtil.dir/ImfFlatImage.cpp.o
-[ 60%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testCompositeDeepScanLine.cpp.o
-Scanning dependencies of target exrstdattr
-[ 60%] Building CXX object exrstdattr/CMakeFiles/exrstdattr.dir/main.cpp.o
-[ 60%] Building CXX object IlmImfUtil/CMakeFiles/IlmImfUtil.dir/ImfDeepImage.cpp.o
-[ 61%] Building CXX object exrmaketiled/CMakeFiles/exrmaketiled.dir/main.cpp.o
-[ 62%] Building CXX object IlmImfUtil/CMakeFiles/IlmImfUtil.dir/ImfImageIO.cpp.o
-[ 62%] Building CXX object exrmaketiled/CMakeFiles/exrmaketiled.dir/Image.cpp.o
-[ 63%] Linking CXX executable exrstdattr
-[ 63%] Built target exrstdattr
-[ 64%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testCompression.cpp.o
-Scanning dependencies of target exrmakepreview
-[ 65%] Building CXX object exrmakepreview/CMakeFiles/exrmakepreview.dir/makePreview.cpp.o
-[ 65%] Building CXX object IlmImfUtil/CMakeFiles/IlmImfUtil.dir/ImfFlatImageIO.cpp.o
-[ 66%] Linking CXX executable exrmaketiled
-[ 66%] Built target exrmaketiled
-[ 66%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testConversion.cpp.o
-[ 66%] Building CXX object exrmakepreview/CMakeFiles/exrmakepreview.dir/main.cpp.o
-Scanning dependencies of target exrenvmap
-[ 66%] Building CXX object exrenvmap/CMakeFiles/exrenvmap.dir/makeLatLongMap.cpp.o
-[ 67%] Linking CXX executable exrmakepreview
-[ 67%] Built target exrmakepreview
-[ 68%] Building CXX object IlmImfUtil/CMakeFiles/IlmImfUtil.dir/ImfDeepImageIO.cpp.o
-Scanning dependencies of target exrmultiview
-[ 68%] Building CXX object exrmultiview/CMakeFiles/exrmultiview.dir/makeMultiView.cpp.o
-[ 69%] Building CXX object exrenvmap/CMakeFiles/exrenvmap.dir/readInputImage.cpp.o
-[ 70%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testCopyDeepScanLine.cpp.o
-[ 70%] Building CXX object IlmImfUtil/CMakeFiles/IlmImfUtil.dir/ImfImageDataWindow.cpp.o
-[ 70%] Building CXX object exrenvmap/CMakeFiles/exrenvmap.dir/resizeImage.cpp.o
-[ 71%] Building CXX object exrmultiview/CMakeFiles/exrmultiview.dir/main.cpp.o
-[ 71%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testCopyDeepTiled.cpp.o
-[ 72%] Building CXX object exrenvmap/CMakeFiles/exrenvmap.dir/makeCubeMap.cpp.o
-[ 73%] Linking CXX shared library libIlmImfUtil.dylib
-[ 73%] Building CXX object exrmultiview/CMakeFiles/exrmultiview.dir/Image.cpp.o
-[ 73%] Built target IlmImfUtil
-[ 74%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testCopyMultiPartFile.cpp.o
-[ 74%] Building CXX object exrenvmap/CMakeFiles/exrenvmap.dir/main.cpp.o
-Scanning dependencies of target exrmultipart
-[ 74%] Building CXX object exrmultipart/CMakeFiles/exrmultipart.dir/exrmultipart.cpp.o
-[ 75%] Linking CXX executable exrmultiview
-[ 75%] Built target exrmultiview
-[ 75%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testCopyPixels.cpp.o
-Scanning dependencies of target IlmImfUtilTest
-[ 75%] Building CXX object IlmImfUtilTest/CMakeFiles/IlmImfUtilTest.dir/main.cpp.o
-[ 76%] Building CXX object exrenvmap/CMakeFiles/exrenvmap.dir/blurImage.cpp.o
-[ 76%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testCustomAttributes.cpp.o
-[ 77%] Building CXX object IlmImfUtilTest/CMakeFiles/IlmImfUtilTest.dir/testFlatImage.cpp.o
-[ 77%] Building CXX object exrenvmap/CMakeFiles/exrenvmap.dir/EnvmapImage.cpp.o
-[ 78%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testDeepScanLineBasic.cpp.o
-[ 79%] Linking CXX executable exrmultipart
-[ 80%] Linking CXX executable exrenvmap
-[ 80%] Built target exrmultipart
-[ 80%] Building CXX object IlmImfUtilTest/CMakeFiles/IlmImfUtilTest.dir/testDeepImage.cpp.o
-[ 80%] Built target exrenvmap
-[ 80%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testDeepScanLineHuge.cpp.o
-[ 81%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testDeepScanLineMultipleRead.cpp.o
-[ 81%] Building CXX object IlmImfUtilTest/CMakeFiles/IlmImfUtilTest.dir/testIO.cpp.o
-[ 81%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testDeepTiledBasic.cpp.o
-[ 82%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testDwaCompressorSimd.cpp.o
-[ 82%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testExistingStreams.cpp.o
-[ 83%] Linking CXX executable IlmImfUtilTest
-[ 83%] Built target IlmImfUtilTest
-[ 84%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testFutureProofing.cpp.o
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImfTest/testExistingStreams.cpp:173:15: warning: comparison of unsigned expression < 0 is always false [-Wtautological-compare]
-    if ((_pos < 0 || _pos >= _length) && n != 0)
-         ~~~~ ^ ~
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImfTest/testExistingStreams.cpp:194:14: warning: comparison of unsigned expression < 0 is always false [-Wtautological-compare]
-    if (_pos < 0 || _pos >= _length)
-        ~~~~ ^ ~
-[ 84%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testHuf.cpp.o
-2 warnings generated.
-[ 85%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testInputPart.cpp.o
-[ 85%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testIsComplete.cpp.o
-[ 86%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testLineOrder.cpp.o
-[ 86%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testLut.cpp.o
-[ 87%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testMagic.cpp.o
-[ 87%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testMultiPartApi.cpp.o
-[ 87%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testMultiPartFileMixingBasic.cpp.o
-[ 88%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testMultiPartSharedAttributes.cpp.o
-[ 88%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testMultiPartThreading.cpp.o
-[ 89%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testMultiScanlinePartThreading.cpp.o
-[ 89%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testMultiTiledPartThreading.cpp.o
-[ 90%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testMultiView.cpp.o
-[ 90%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testNativeFormat.cpp.o
-[ 91%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testOptimized.cpp.o
-[ 91%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testOptimizedInterleavePatterns.cpp.o
-[ 92%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testPartHelper.cpp.o
-[ 92%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testPreviewImage.cpp.o
-[ 93%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testRgba.cpp.o
-[ 93%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testRgbaThreading.cpp.o
-[ 94%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testRle.cpp.o
-[ 94%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testSampleImages.cpp.o
-[ 94%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testScanLineApi.cpp.o
-[ 95%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testSharedFrameBuffer.cpp.o
-[ 95%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testStandardAttributes.cpp.o
-[ 96%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testTiledCompression.cpp.o
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImfTest/testScanLineApi.cpp:159:17: warning: enumeration value 'NUM_LEVELMODES' not handled in switch [-Wswitch]
-        switch (mode)
-                ^
-[ 96%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testTiledCopyPixels.cpp.o
-1 warning generated.
-[ 97%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testTiledLineOrder.cpp.o
-[ 97%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testTiledRgba.cpp.o
-[ 98%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testTiledYa.cpp.o
-[ 98%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testWav.cpp.o
-[ 99%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testXdr.cpp.o
-[ 99%] Building CXX object IlmImfTest/CMakeFiles/IlmImfTest.dir/testYca.cpp.o
-/opt/local/USD/src/openexr-2.2.0/OpenEXR/IlmImfTest/testYca.cpp:141:10: warning: enumeration value 'NUM_LINEORDERS' not handled in switch [-Wswitch]
-        switch (readOrder)
-                ^
-1 warning generated.
-[100%] Linking CXX executable IlmImfTest
-[100%] Built target IlmImfTest
-Install the project...
--- Install configuration: ""
--- Installing: /opt/local/USD/include/OpenEXR/OpenEXRConfig.h
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/TechnicalIntroduction.pdf
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/ReadingAndWritingImageFiles.pdf
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/OpenEXRFileLayout.pdf
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/MultiViewOpenEXR.pdf
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/InterpretingDeepPixels.pdf
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/TheoryDeepPixels.pdf
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/examples/main.cpp
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/examples/drawImage.cpp
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/examples/rgbaInterfaceExamples.cpp
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/examples/rgbaInterfaceTiledExamples.cpp
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/examples/generalInterfaceExamples.cpp
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/examples/lowLevelIoExamples.cpp
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/examples/previewImageExamples.cpp
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/examples/generalInterfaceTiledExamples.cpp
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/examples/generalInterfaceTiledExamples.h
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/examples/drawImage.h
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/examples/rgbaInterfaceExamples.h
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/examples/generalInterfaceExamples.h
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/examples/rgbaInterfaceTiledExamples.h
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/examples/lowLevelIoExamples.h
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/examples/previewImageExamples.h
--- Installing: /opt/local/USD/share/doc/OpenEXR-2.2.0/examples/namespaceAlias.h
--- Installing: /opt/local/USD/lib/libIlmImf.22.0.0.dylib
--- Installing: /opt/local/USD/lib/libIlmImf.22.dylib
--- Installing: /opt/local/USD/lib/libIlmImf.dylib
--- Installing: /opt/local/USD/include/OpenEXR/ImfForward.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfExport.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfBoxAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfCRgbaFile.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfChannelList.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfChannelListAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfCompressionAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfDoubleAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfFloatAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfFrameBuffer.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfHeader.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfIO.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfInputFile.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfIntAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfLineOrderAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfMatrixAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfOpaqueAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfOutputFile.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfRgbaFile.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfStringAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfVecAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfHuf.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfWav.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfLut.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfArray.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfCompression.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfLineOrder.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfName.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfPixelType.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfVersion.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfXdr.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfConvert.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfPreviewImage.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfPreviewImageAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfChromaticities.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfChromaticitiesAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfKeyCode.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfKeyCodeAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfTimeCode.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfTimeCodeAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfRational.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfRationalAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfFramesPerSecond.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfStandardAttributes.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfEnvmap.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfEnvmapAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfInt64.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfRgba.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfTileDescription.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfTileDescriptionAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfTiledInputFile.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfTiledOutputFile.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfTiledRgbaFile.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfRgbaYca.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfTestFile.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfThreading.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfB44Compressor.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfStringVectorAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfMultiView.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfAcesFile.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfMultiPartOutputFile.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfGenericOutputFile.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfMultiPartInputFile.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfGenericInputFile.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfPartType.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfPartHelper.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfOutputPart.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfTiledOutputPart.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfInputPart.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfTiledInputPart.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfDeepScanLineOutputFile.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfDeepScanLineOutputPart.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfDeepScanLineInputFile.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfDeepScanLineInputPart.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfDeepTiledInputFile.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfDeepTiledInputPart.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfDeepTiledOutputFile.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfDeepTiledOutputPart.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfDeepFrameBuffer.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfDeepCompositing.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfCompositeDeepScanLine.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfNamespace.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfMisc.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfDeepImageState.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfDeepImageStateAttribute.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfFloatVectorAttribute.h
--- Installing: /opt/local/USD/lib/libIlmImfUtil.22.0.0.dylib
--- Installing: /opt/local/USD/lib/libIlmImfUtil.22.dylib
--- Installing: /opt/local/USD/lib/libIlmImfUtil.dylib
--- Installing: /opt/local/USD/include/OpenEXR/ImfImageChannel.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfFlatImageChannel.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfDeepImageChannel.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfSampleCountChannel.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfImageLevel.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfFlatImageLevel.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfDeepImageLevel.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfImage.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfFlatImage.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfDeepImage.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfImageIO.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfFlatImageIO.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfDeepImageIO.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfImageDataWindow.h
--- Installing: /opt/local/USD/include/OpenEXR/ImfImageChannelRenaming.h
--- Installing: /opt/local/USD/bin/exrheader
--- Installing: /opt/local/USD/bin/exrmaketiled
--- Installing: /opt/local/USD/bin/exrstdattr
--- Installing: /opt/local/USD/bin/exrmakepreview
--- Installing: /opt/local/USD/bin/exrenvmap
--- Installing: /opt/local/USD/bin/exrmultiview
--- Installing: /opt/local/USD/bin/exrmultipart

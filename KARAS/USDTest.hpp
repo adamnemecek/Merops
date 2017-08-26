@@ -10,16 +10,12 @@
 #define USDTest_hpp
 
 #include <stdio.h>
-//#include "USD/include/pxr/pxr.h"
-//#include "USD/include/pxr/usd/usdLux/shadowAPI.h"
-
+//#include "pxr/pxr.h"
+//#include "pxr/usd/usdLux/shadowAPI.h"
 
 #ifdef __cplusplus
 extern "C" {
     extern void test();
-
-
-
 }
 #endif
 

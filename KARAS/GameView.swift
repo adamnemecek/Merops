@@ -91,12 +91,13 @@ class GameView: SCNView {
             NSLog("\(vec)")
             pointNode = node.flattenedClone()
             pointNode?.name = "vertex_\(index)"
-            pointNode?.position = vec
+            pointNode?.position = self.projectPoint(vec)
             result.node.addChildNode(pointNode!)
         }
     }
     
     func lines (result: SCNHitTestResult) {
+        let node = SCNNode()
         
         for (index, vec) in vertices().enumerated() {
             let source = SCNGeometrySource(vertices: [vec, vec]),
@@ -104,23 +105,22 @@ class GameView: SCNView {
                 data = Data(bytes: indices),
                 element = SCNGeometryElement(data: data, primitiveType: .line, primitiveCount: 1, bytesPerIndex: 1)
             
-            let node = SCNNode(geometry: SCNGeometry(sources: [source], elements: [element]))
-            // NOTE: クローンの方が最適化されて早い
-            // node.flattenedClone()
-            node.name = "line\(index)"
+            node.geometry = SCNGeometry(sources: [source], elements: [element])
+            let lineNode = node.flattenedClone()
+            lineNode.name = "line\(index)"
             
             let material = SCNMaterial()
             material.diffuse.contents = Color.red
-            node.geometry!.insertMaterial(material, at: 0)
-            result.node.addChildNode(node.clone())
+            lineNode.geometry!.insertMaterial(material, at: 0)
+            result.node.addChildNode(lineNode)
         }
     }
     
     func faces(result: SCNHitTestResult) {
         
-        let planeSources = result.node.geometry?
-            .getGeometrySources(for:SCNGeometrySource.Semantic.normal)
-        
+//        let planeSources = result.node.geometry?
+//            .getGeometrySources(for:SCNGeometrySource.Semantic.normal)
+//        
         let material = result.node.geometry!.firstMaterial!
         material.emission.contents = Color.green
     }
@@ -153,11 +153,8 @@ class GameView: SCNView {
         default:
             break
         }
-        NSLog("draw")
     }
-    override func touchesBegan(with event: NSEvent) {
-        
-    }
+
     override func mouseDown(with event: NSEvent) {
 
         super.mouseDown(with: event)
@@ -207,9 +204,9 @@ class GameView: SCNView {
                 rot.isHidden = false
                 
             default:
-                // Mat
                 result.node.geometry!.firstMaterial!.emission.contents =
-                    (result.node.geometry != nil) ? Color.red : Color.yellow
+                    (result.node.geometry != nil) ? Color.red
+                                                  : Color.yellow
             }
         }
     }
@@ -226,18 +223,20 @@ class GameView: SCNView {
 
         // Transform Node
         let hitResults = self.hitTest(p, options: [:])
-        switch hitResults[0].node.name! {
-        case "pos":
-            releasedNode?.position = SCNVector3(x:x, y:y, z:z)
-            
-        case "rot":
-            releasedNode?.eulerAngles = SCNVector3(x:x, y:y, z:z)
-            
-        case "scl":
-            releasedNode?.scale = SCNVector3(x:x, y:y, z:z)
-            
-        default:
-            break
+        for hit in hitResults{
+            switch hit.node.name! {
+            case "pos":
+                releasedNode?.position = SCNVector3(x:x, y:y, z:z)
+                
+            case "rot":
+                releasedNode?.eulerAngles = SCNVector3(x:x, y:y, z:z)
+                
+            case "scl":
+                releasedNode?.scale = SCNVector3(x:x, y:y, z:z)
+                
+            default:
+                break
+            }
         }
         
         NSLog("\(String(describing: releasedNode))")

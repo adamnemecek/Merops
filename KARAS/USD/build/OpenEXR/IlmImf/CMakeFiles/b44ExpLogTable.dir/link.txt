@@ -1,1 +1,0 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/b44ExpLogTable.dir/b44ExpLogTable.cpp.o  -o b44ExpLogTable  -L/opt/local/USD/lib -Wl,-rpath,/opt/local/USD/lib -lHalf -lIex -lIlmThread -lpthread 

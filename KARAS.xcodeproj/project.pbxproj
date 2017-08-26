@@ -33,6 +33,7 @@
 		ED5CB5381F4A075400FF9CCA /* USDTest.hpp in Headers */ = {isa = PBXBuildFile; fileRef = ED5CB5361F4A075400FF9CCA /* USDTest.hpp */; };
 		ED5F81D91F3E6A8E009F9596 /* USDcmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F81D81F3E6A8E009F9596 /* USDcmd.swift */; };
 		ED770A981F49D3A5005A6518 /* KAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED770A971F49D3A5005A6518 /* KAnimation.swift */; };
+		EDDA011A1F4F270C001F0A18 /* SCNgeo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA01191F4F270C001F0A18 /* SCNgeo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		ED5CB5361F4A075400FF9CCA /* USDTest.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = USDTest.hpp; sourceTree = "<group>"; };
 		ED5F81D81F3E6A8E009F9596 /* USDcmd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USDcmd.swift; sourceTree = "<group>"; };
 		ED770A971F49D3A5005A6518 /* KAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KAnimation.swift; sourceTree = "<group>"; };
+		EDDA01191F4F270C001F0A18 /* SCNgeo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNgeo.swift; sourceTree = "<group>"; };
 		EDE78A871EBC77FD000113A5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,15 +116,8 @@
 		ED32B95C1EB5D298000D8823 /* KARAS */ = {
 			isa = PBXGroup;
 			children = (
-				ED32B95D1EB5D298000D8823 /* AppDelegate.swift */,
-				ED32B95F1EB5D298000D8823 /* GameView.swift */,
-				ED32B9611EB5D298000D8823 /* GameViewController.swift */,
-				ED32B99C1EBA0BAD000D8823 /* GameViewOverlay.swift */,
-				ED32B9931EB9EF6F000D8823 /* PropView.swift */,
-				ED32B9951EB9F39A000D8823 /* PropViewController.swift */,
-				ED32B9971EBA0629000D8823 /* ConsoleViewController.swift */,
-				ED32B9981EBA0629000D8823 /* ConsoleViewController.xib */,
-				ED5CB5341F4A075400FF9CCA /* KARAS-Bridging-Header.h */,
+				ED42EB8F1F5170F000F36CAD /* App */,
+				ED42EB901F51717500F36CAD /* Bridge */,
 				ED5F81D61F3DC650009F9596 /* core */,
 				ED5F81D51F3DC59B009F9596 /* node */,
 				ED5F81D71F3DC782009F9596 /* tool */,
@@ -131,15 +126,39 @@
 				ED32B9671EB5D298000D8823 /* MainMenu.xib */,
 				ED32B96A1EB5D298000D8823 /* Info.plist */,
 				EDE78A871EBC77FD000113A5 /* MyPlayground.playground */,
+			);
+			path = KARAS;
+			sourceTree = "<group>";
+		};
+		ED42EB8F1F5170F000F36CAD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				ED32B95D1EB5D298000D8823 /* AppDelegate.swift */,
+				ED32B95F1EB5D298000D8823 /* GameView.swift */,
+				ED32B9611EB5D298000D8823 /* GameViewController.swift */,
+				ED32B99C1EBA0BAD000D8823 /* GameViewOverlay.swift */,
+				ED32B9931EB9EF6F000D8823 /* PropView.swift */,
+				ED32B9951EB9F39A000D8823 /* PropViewController.swift */,
+				ED32B9971EBA0629000D8823 /* ConsoleViewController.swift */,
+				ED32B9981EBA0629000D8823 /* ConsoleViewController.xib */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		ED42EB901F51717500F36CAD /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				ED5CB5341F4A075400FF9CCA /* KARAS-Bridging-Header.h */,
 				ED5CB5351F4A075400FF9CCA /* USDTest.cpp */,
 				ED5CB5361F4A075400FF9CCA /* USDTest.hpp */,
 			);
-			path = KARAS;
+			name = Bridge;
 			sourceTree = "<group>";
 		};
 		ED5F81D51F3DC59B009F9596 /* node */ = {
 			isa = PBXGroup;
 			children = (
+				EDDA01191F4F270C001F0A18 /* SCNgeo.swift */,
 				ED32B9701EB5D58B000D8823 /* GizmoNode.swift */,
 				ED32B97A1EB5D76F000D8823 /* QuadNode.swift */,
 			);
@@ -160,8 +179,8 @@
 		ED5F81D71F3DC782009F9596 /* tool */ = {
 			isa = PBXGroup;
 			children = (
-				ED32B9911EB9C322000D8823 /* ModelSelection.swift */,
 				ED32B9761EB5D734000D8823 /* SceneUtil.swift */,
+				ED32B9911EB9C322000D8823 /* ModelSelection.swift */,
 				ED5F81D81F3E6A8E009F9596 /* USDcmd.swift */,
 			);
 			name = tool;
@@ -283,6 +302,7 @@
 				ED32B97B1EB5D76F000D8823 /* QuadNode.swift in Sources */,
 				ED32B9711EB5D58B000D8823 /* GizmoNode.swift in Sources */,
 				ED770A981F49D3A5005A6518 /* KAnimation.swift in Sources */,
+				EDDA011A1F4F270C001F0A18 /* SCNgeo.swift in Sources */,
 				ED32B9921EB9C322000D8823 /* ModelSelection.swift in Sources */,
 				ED32B99D1EBA0BAD000D8823 /* GameViewOverlay.swift in Sources */,
 				ED32B9831EB5DC2E000D8823 /* USDObject.swift in Sources */,
@@ -412,6 +432,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = KARAS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sumioka.KARAS;
@@ -419,6 +440,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "KARAS/KARAS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -433,12 +455,14 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = KARAS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sumioka.KARAS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "KARAS/KARAS-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

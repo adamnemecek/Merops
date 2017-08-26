@@ -11,8 +11,6 @@ import SpriteKit
 class GameViewOverlay : SKScene {
     
     override func didMove(to view: SKView) {
-        self.isUserInteractionEnabled = false
-        
         
         let blueRect = SKShapeNode(rect:
             CGRect(x: 0.0, y: 0.0, width: 150.0, height: 50.0))

@@ -12,6 +12,11 @@ func pivotNode() {
 //    ship.pivot = SCNMatrix4MakeTranslation(10.0, 0.0, 0.0)
 }
 
+//見やすくするために
+func v(_ x: CGFloat, _ y: CGFloat, _ z: CGFloat) -> SCNVector3{
+    return SCNVector3(x: x, y: y, z: z)
+}
+
 func createCam() -> SCNNode {
     let cameraNode = SCNNode()
     cameraNode.camera = SCNCamera()

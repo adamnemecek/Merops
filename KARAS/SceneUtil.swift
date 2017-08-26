@@ -103,19 +103,12 @@ class SCNUtils {
     }
 }
 
-extension SCNNode {
-    
-}
-
 /*
  * The following SCNVector3 extension comes from
  * https://github.com/devindazzle/SCNVector3Extensions - with some changes by me
  */
 extension SCNVector3 {
-    /**
-     * Negates the vector described by SCNVector3 and returns
-     * the result as a new SCNVector3.
-     */
+
     func negate() -> SCNVector3 {
         return self * -1
     }
@@ -134,6 +127,15 @@ extension SCNVector3 {
     func length() -> CGFloat {
         return sqrt(x*x + y*y + z*z)
     }
+    
+    /**
+     * Negates the vector described by SCNVector3 and returns
+     * the result as a new SCNVector3.
+     */
+    func length²() -> CGFloat {
+        return (x*x) + (y*y) + (z*z)
+    }
+    
     
     /**
      * Normalizes the vector described by the SCNVector3 to length 1.0 and returns
