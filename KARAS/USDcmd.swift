@@ -12,7 +12,9 @@ func stdOutOfCommand(cmd: String, arguments args: [String], currentDirPath curre
     let task: Process = Process()
     task.launchPath = cmd
     task.arguments = args
-    if currentDir != nil { task.currentDirectoryPath = currentDir! }
+    if currentDir != nil {
+        task.currentDirectoryPath = currentDir!
+    }
     let pipe: Pipe = Pipe()
     task.standardOutput = pipe
     task.launch()

@@ -12,101 +12,84 @@ import ModelIO
 import SceneKit.ModelIO
 
 
-public class USDObject : MDLObject {
-    
-    override init(){
+public class USDObject: MDLObject {
+
+    override init() {
         super.init()
         SCNNode(mdlObject: self)
     }
-    
-    /*
-     func rewrite() {
-     self.rootNode.enumerateChildNodes({ child, stop in
-     if let sub1 = child as? SCNNode {
-     print(sub1.className)
-     
-     if let geo = sub1.geometry {
-     print(geo.geometrySources)
-     }
-     
-     if let cam = sub1.camera {
-     
-     }
-     }
-     })
-     }
-     */
 }
 
 class USDImporter {
-    
+
 }
 
 class USDExporter {
-    
+
     public static func cleaner(scene: SCNScene) {
         scene.rootNode.enumerateChildNodes({ child, _ in
             child.childNode(withName: "", recursively: true)?.removeFromParentNode()
         })
     }
-    
+
     public static func exportAssetFrom(scene: SCNScene) {
         let asset = MDLAsset(scnScene: scene)
         let documentsPath = NSURL(fileURLWithPath:
-            NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])
-        
+        NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])
+
         let path = documentsPath.appendingPathComponent("ModelIO-Export")
         do {
             try FileManager.default.createDirectory(at: path!, withIntermediateDirectories: true, attributes: nil)
         } catch let error as NSError {
             NSLog("Unable to create directory \(error.debugDescription)")
         }
-        
+
         let exportFile = path?.appendingPathComponent("model.usd")
         try! asset.export(to: exportFile!)
     }
-    
+
     public static func exportText() {
-        
+
         let documentsPath = NSURL(fileURLWithPath:
-            NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])
-        
+        NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])
+
         let path = documentsPath.appendingPathComponent("ModelIO-Export")
         do {
             try FileManager.default.createDirectory(at: path!, withIntermediateDirectories: true, attributes: nil)
         } catch let error as NSError {
             NSLog("Unable to create directory \(error.debugDescription)")
         }
-        
+
         // 保存するもの
         let fileName = "file.usda"
         let filePath = documentsPath.absoluteString! + fileName
         let fileObject = "#usda 1.0" +
-                         "\n" +
-                         "def Cube \"Cube\" {}"
-        
+        "\n" +
+        "def Cube \"Cube\" {}"
+
         do {
             try fileObject.write(toFile: filePath, atomically: true, encoding: String.Encoding.utf8)
         } catch {
             // Failed to write file
         }
     }
-    
+
     func mdlmesh(mdlObject: MDLObject) {
         if let mesh = mdlObject as? MDLMesh {
             //            vertexDescriptors.append(mesh.vertexDescriptor)
             for vertexBuffer in mesh.vertexBuffers {
                 let vertexBufferData = Data(bytes: vertexBuffer.map().bytes,
-                                            count: vertexBuffer.length)
+                        count: vertexBuffer.length)
             }
             for submesh in mesh.submeshes! {
                 if let indexBuffer = (submesh as? MDLSubmesh)?.indexBuffer {
                     let indexBufferData = Data(bytes: indexBuffer.map().bytes,
-                                               count: indexBuffer.length)
+                            count: indexBuffer.length)
                 }
             }
         }
     }
+
     /*
      func rewrite () {
      let geo : SCNNode = (scnv.scene?.rootNode.childNode(withName: "geo", recursively: true))!

@@ -10,31 +10,31 @@ import Cocoa
 import SwifterSwift
 
 enum EditMode {
-    case ObjectMode,PositionMode,ScaleMode,RotateMode
+    case ObjectMode, PositionMode, ScaleMode, RotateMode
 }
 
 enum PartMode {
-    case ObjectMode,VertexMode,EdgeMode,FaceMode
+    case ObjectMode, VertexMode, EdgeMode, FaceMode
 }
 
 #if os(OSX)
-    public typealias SuperViewController = NSViewController
-    public typealias Color = NSColor
-    public typealias GestureRecognizer = NSPanGestureRecognizer
-    
+public typealias SuperViewController = NSViewController
+public typealias Color = NSColor
+public typealias GestureRecognizer = NSPanGestureRecognizer
+
 #elseif os(iOS)
-    public typealias SuperViewController = UIViewController
-    public typealias Color = UIColor
-    public typealias GestureRecognizer = UIGestureRecognizer
+public typealias SuperViewController = UIViewController
+public typealias Color = UIColor
+public typealias GestureRecognizer = UIGestureRecognizer
 
 #endif
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    
+
     @IBOutlet weak var window: NSWindow!
-    
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        
+
     }
 }

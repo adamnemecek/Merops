@@ -8,31 +8,32 @@
 
 import SceneKit
 
-class Selection : SCNNode {
-    
+class Selection: SCNNode {
+
     static let sharedManager = Selection()
+
     private override init() {
         super.init()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private var _items: [String] = [""]
-    
-    var items : [String] {
-        
-        get{
+
+    var items: [String] {
+
+        get {
             return self._items
         }
-        
-        set(p){
+
+        set(p) {
             self._items.append(contentsOf: p)
         }
     }
-    
-    func clear(){
+
+    func clear() {
         self._items.removeAll()
     }
 }

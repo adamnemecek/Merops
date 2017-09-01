@@ -13,18 +13,18 @@ private extension Selector {
 }
 
 class PropViewController: SuperViewController {
-    
-    @IBOutlet weak var v : PropView!
-    
+
+    @IBOutlet weak var v: PropView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     func scninit() {
         let btn = NSButton(checkboxWithTitle: "btn", target: self, action: Selector.buttonTapped)
         v.addSubview(btn)
     }
-    
+
     func hideView() {
         v.isHidden = true
     }

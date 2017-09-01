@@ -11,16 +11,17 @@ import Cocoa
 class ConsoleViewController: NSViewController {
 
     @IBOutlet weak var v: NSView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let tf = NSTextView()
         tf.string = "hello"
         self.view.addSubview(tf)
-        
+
         let iv = NSImageView()
 //        iv.image = NSImage(contentsOf: URL(""))
         self.view.addSubview(iv)
     }
-    
+
 }

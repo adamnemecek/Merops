@@ -41,6 +41,7 @@
 		ED24CD2F1F26623A000CC0BB /* SwifterSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifterSwift.framework; path = Carthage/Build/Mac/SwifterSwift.framework; sourceTree = "<group>"; };
 		ED24CD301F26623A000CC0BB /* SwiftGit2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftGit2.framework; path = Carthage/Build/Mac/SwiftGit2.framework; sourceTree = "<group>"; };
 		ED24CD351F266374000CC0BB /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
+		ED2600A11F585E2D0031F4EF /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
 		ED32B95A1EB5D298000D8823 /* KARAS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KARAS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED32B95D1EB5D298000D8823 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED32B95F1EB5D298000D8823 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -88,12 +89,20 @@
 		ED24CD2D1F26623A000CC0BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED2600A11F585E2D0031F4EF /* Quick.framework */,
 				ED24CD351F266374000CC0BB /* Result.framework */,
 				ED24CD2E1F26623A000CC0BB /* Alamofire.framework */,
 				ED24CD2F1F26623A000CC0BB /* SwifterSwift.framework */,
 				ED24CD301F26623A000CC0BB /* SwiftGit2.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED2600A31F5860720031F4EF /* Test */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Test;
 			sourceTree = "<group>";
 		};
 		ED32B9511EB5D298000D8823 = {
@@ -123,6 +132,7 @@
 				ED5F81D71F3DC782009F9596 /* tool */,
 				ED32B9631EB5D298000D8823 /* art.scnassets */,
 				ED32B9651EB5D298000D8823 /* Assets.xcassets */,
+				ED2600A31F5860720031F4EF /* Test */,
 				ED32B9671EB5D298000D8823 /* MainMenu.xib */,
 				ED32B96A1EB5D298000D8823 /* Info.plist */,
 				EDE78A871EBC77FD000113A5 /* MyPlayground.playground */,
