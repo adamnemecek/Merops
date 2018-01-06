@@ -1,5 +1,4 @@
-github "Alamofire/Alamofire" "4.5.0"
-github "Quick/Quick" "v1.1.0"
-github "antitypical/Result" "3.2.3"
+github "Alamofire/Alamofire" "4.6.0"
+github "Quick/Quick" "v1.2.0"
 github "SwifterSwift/SwifterSwift" "1.6.4"
-github "SwiftGit2/SwiftGit2" "v0.3"
+github "libgit2/objective-git" "0.13.0"
