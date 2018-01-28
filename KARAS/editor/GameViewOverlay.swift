@@ -10,12 +10,7 @@ import SpriteKit
 import SceneKit
 import QuartzCore
 
-class GameViewOverlay: SKScene, SKSceneDelegate {
-    
-    var label_name : SKLabelNode!
-    var label_position : SKLabelNode!
-    var label_rotate : SKLabelNode!
-    var label_scale : SKLabelNode!
+class GameViewOverlay: SKScene, SKSceneDelegate, SCNSceneRendererDelegate {
     
     /*
      -------------------------------------------------
@@ -33,6 +28,10 @@ class GameViewOverlay: SKScene, SKSceneDelegate {
      -------------------------------------------------
      */
     
+    var label_name : SKLabelNode!
+    var label_position : SKLabelNode!
+    var label_rotate : SKLabelNode!
+    var label_scale : SKLabelNode!
     
     init(size: CGSize, view: GameView){
         
@@ -40,44 +39,61 @@ class GameViewOverlay: SKScene, SKSceneDelegate {
         self.anchorPoint = .init(x: 0.5, y: 0.5)
         self.scaleMode = .resizeFill
         
+        // text
         self.label_name = SKLabelNode(fontNamed: "AvenirNext-Bold")
         self.label_position = SKLabelNode(fontNamed: "AvenirNext-Bold")
         self.label_rotate = SKLabelNode(fontNamed: "AvenirNext-Bold")
         self.label_scale = SKLabelNode(fontNamed: "AvenirNext-Bold")
         
-        self.label_name.text = "name" //child.name
-        self.label_position.text = "position" // String(describing: child.position)
-        self.label_rotate.text = "rotate" // String(describing: child.rotation)
-        self.label_scale.text = "scale" //String(describing: child.scale)
+        self.label_name.fontSize = 8
+        self.label_position.fontSize = 8
+        self.label_rotate.fontSize = 8
+        self.label_scale.fontSize = 8
         
-        view.scene?.rootNode.enumerateChildNodes({ child, _ in
+//        view.scene?.rootNode.enumerateChildNodes({ child, _ in
             self.label_name.text = "name" //child.name
             self.label_position.text = "position" // String(describing: child.position)
             self.label_rotate.text = "rotate" // String(describing: child.rotation)
             self.label_scale.text = "scale" //String(describing: child.scale)
-        })
-    
+//        })
+        
+        // position
         for (index, item) in [label_name, label_position, label_rotate, label_scale].enumerated() {
             item?.horizontalAlignmentMode = .left
             item?.verticalAlignmentMode = .bottom
-            item?.position = CGPoint(x: -size.width/2 + 20, y: size.height/2 - CGFloat(32	 * index))
+            item?.position = CGPoint(x: -size.width/2 + 20,
+                                     y: size.height/2 - CGFloat(24 * (index + 1))
+            )
             self.addChild(item!)
         }
         
         // 3D guide
-        let scnScene: SCNScene = {
-            let scnScene = SCNScene()
-            let torusGeometry = SCNTorus(ringRadius: 10, pipeRadius: 3)
-            let torusNode = SCNNode(geometry: torusGeometry)
-            torusNode.eulerAngles = SCNVector3(x: CGFloat.pi / 2, y: 0, z: 0)
-            scnScene.rootNode.addChildNode(torusNode)
-            return scnScene
-        }()
-        let node = SK3DNode(viewportSize: CGSize(width: 200, height: 200))
-        node.scnScene = scnScene
-//        self.addChild(node)
+        let torusGeometry = SCNTorus(ringRadius: 10, pipeRadius: 3)
+        let torusNode = SCNNode(geometry: torusGeometry)
+        torusNode.eulerAngles = SCNVector3(x: CGFloat.pi / 2, y: 0, z: 0)
+        view.scene?.rootNode.addChildNode(torusNode)
         
-//        self.delegate = view.delegate as! SKSceneDelegate
+        // HUD
+        let redRect = SKShapeNode(
+            rectOf: CGSize(width: 16.0, height: 16.0)
+        )
+        redRect.position = CGPoint(x: size.width/2 - 18, y: -size.height/2 + 76)
+        redRect.fillColor = Color.red
+        self.addChild(redRect)
+        
+        let greenRect = SKShapeNode(
+            rectOf: CGSize(width: 16.0, height: 16.0)
+        )
+        greenRect.position = CGPoint(x: size.width/2 - 18, y: -size.height/2 + 52)
+        greenRect.fillColor = Color.green
+        self.addChild(greenRect)
+        
+        let blueRect = SKShapeNode(
+            rectOf: CGSize(width: 16.0, height: 16.0)
+        )
+        blueRect.position = CGPoint(x: size.width/2 - 18, y: -size.height/2 + 28)
+        blueRect.fillColor = Color.blue
+        self.addChild(blueRect)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -85,10 +101,7 @@ class GameViewOverlay: SKScene, SKSceneDelegate {
     }
     
     func layout2DOverlay() {
-        let prop = SKLabelNode()
-        prop.text = "aaa"
-        prop.position = CGPoint(x: 100, y: 100)
-        self.addChild(prop)
+
     }
     
     func layoutButton() {
@@ -107,24 +120,6 @@ class GameViewOverlay: SKScene, SKSceneDelegate {
     
     override func didMove(to view: SKView) {
 
-        let blueRect = SKShapeNode(
-            rect: CGRect(x: 0.0, y: 0.0, width: 150.0, height: 50.0)
-        )
-        blueRect.position = GetMid()
-        blueRect.fillColor = Color.blue
-        self.addChild(blueRect)
-
-        let redRect = SKShapeNode(
-            rectOf: CGSize(width: 150.0, height: 50.0)
-        )
-        redRect.position = GetMid()
-        redRect.fillColor = Color.red
-        self.addChild(redRect)
-
-        let prop = SKLabelNode()
-        prop.text = "aaa"
-        prop.position = CGPoint(x: 100, y: 100)
-        self.addChild(prop)
     }
 }
 

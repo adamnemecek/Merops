@@ -4,9 +4,6 @@
 
 @import Foundation;
 
-
-#include "USDTest.hpp"
-
 // libgit
 #import "ObjectiveGit/git2.h"
 #import "ObjectiveGit/GTObject.h"

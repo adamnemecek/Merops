@@ -20,6 +20,7 @@ class GeneralNode: SCNNode {
     }
 }
 
+// sceneeditor みたいに統合していい気がする
 
 public class PositionNode: SCNNode {
     

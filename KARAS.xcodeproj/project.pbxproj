@@ -15,15 +15,13 @@
 		ED32B9641EB5D298000D8823 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = ED32B9631EB5D298000D8823 /* art.scnassets */; };
 		ED32B9691EB5D298000D8823 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED32B9671EB5D298000D8823 /* MainMenu.xib */; };
 		ED32B9711EB5D58B000D8823 /* GizmoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32B9701EB5D58B000D8823 /* GizmoView.swift */; };
-		ED32B9771EB5D734000D8823 /* SCNMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32B9761EB5D734000D8823 /* SCNMath.swift */; };
+		ED32B9771EB5D734000D8823 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32B9761EB5D734000D8823 /* Math.swift */; };
 		ED32B9791EB5D75C000D8823 /* SCNTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32B9781EB5D75C000D8823 /* SCNTemplate.swift */; };
-		ED32B97B1EB5D76F000D8823 /* QuadNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32B97A1EB5D76F000D8823 /* QuadNode.swift */; };
 		ED32B9811EB5DC1A000D8823 /* toolGit.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32B9801EB5DC1A000D8823 /* toolGit.swift */; };
 		ED32B9831EB5DC2E000D8823 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32B9821EB5DC2E000D8823 /* Serializer.swift */; };
 		ED32B99A1EBA0629000D8823 /* ConsoleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED32B9981EBA0629000D8823 /* ConsoleViewController.xib */; };
 		ED32B99D1EBA0BAD000D8823 /* GameViewOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32B99C1EBA0BAD000D8823 /* GameViewOverlay.swift */; };
-		ED5CB5371F4A075400FF9CCA /* USDTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED5CB5351F4A075400FF9CCA /* USDTest.mm */; };
-		ED5CB5381F4A075400FF9CCA /* USDTest.hpp in Headers */ = {isa = PBXBuildFile; fileRef = ED5CB5361F4A075400FF9CCA /* USDTest.hpp */; };
+		ED3A69862000A9B800AAA272 /* ConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3A69852000A9B800AAA272 /* ConsoleView.swift */; };
 		ED5F81D91F3E6A8E009F9596 /* toolUSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F81D81F3E6A8E009F9596 /* toolUSD.swift */; };
 		ED770A981F49D3A5005A6518 /* toolAnimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED770A971F49D3A5005A6518 /* toolAnimate.swift */; };
 		EDA91BBF1FF2886600E14B8D /* AAPLTransforms.h in Headers */ = {isa = PBXBuildFile; fileRef = EDA91BB51FF2886500E14B8D /* AAPLTransforms.h */; };
@@ -35,12 +33,13 @@
 		EDA91BC61FF2886600E14B8D /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EDA91BBC1FF2886600E14B8D /* Shaders.metal */; };
 		EDA91BC71FF2886600E14B8D /* RoxigaMain.h in Headers */ = {isa = PBXBuildFile; fileRef = EDA91BBD1FF2886600E14B8D /* RoxigaMain.h */; };
 		EDA91BC81FF2886600E14B8D /* ShaderTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = EDA91BBE1FF2886600E14B8D /* ShaderTypes.h */; };
+		EDB79585201D8C40008E79B1 /* adapterGit.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB79582201D8C40008E79B1 /* adapterGit.m */; };
+		EDB79586201D8C40008E79B1 /* Plugins.md in Resources */ = {isa = PBXBuildFile; fileRef = EDB79583201D8C40008E79B1 /* Plugins.md */; };
+		EDB79587201D8C40008E79B1 /* adapterGit.h in Headers */ = {isa = PBXBuildFile; fileRef = EDB79584201D8C40008E79B1 /* adapterGit.h */; };
 		EDDA011A1F4F270C001F0A18 /* Primitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA01191F4F270C001F0A18 /* Primitive.swift */; };
 		EDF08DC81FF3D2770036F476 /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF08DC71FF3D2770036F476 /* ObjectiveGit.framework */; };
 		EDF08DCB1FF3D8BB0036F476 /* toolSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF08DCA1FF3D8BB0036F476 /* toolSelection.swift */; };
 		EDF08DCD1FF3DD340036F476 /* toolGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF08DCC1FF3DD340036F476 /* toolGeometry.swift */; };
-		EDF08DD01FF8672E0036F476 /* Hikaru.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF08DCE1FF8672E0036F476 /* Hikaru.h */; };
-		EDF08DD11FF8672E0036F476 /* Hikaru.mm in Sources */ = {isa = PBXBuildFile; fileRef = EDF08DCF1FF8672E0036F476 /* Hikaru.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,16 +54,14 @@
 		ED32B9681EB5D298000D8823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		ED32B96A1EB5D298000D8823 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED32B9701EB5D58B000D8823 /* GizmoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GizmoView.swift; sourceTree = "<group>"; };
-		ED32B9761EB5D734000D8823 /* SCNMath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNMath.swift; sourceTree = "<group>"; };
+		ED32B9761EB5D734000D8823 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		ED32B9781EB5D75C000D8823 /* SCNTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNTemplate.swift; sourceTree = "<group>"; };
-		ED32B97A1EB5D76F000D8823 /* QuadNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadNode.swift; sourceTree = "<group>"; };
 		ED32B9801EB5DC1A000D8823 /* toolGit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = toolGit.swift; sourceTree = "<group>"; };
 		ED32B9821EB5DC2E000D8823 /* Serializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
 		ED32B9981EBA0629000D8823 /* ConsoleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsoleViewController.xib; sourceTree = "<group>"; };
 		ED32B99C1EBA0BAD000D8823 /* GameViewOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewOverlay.swift; sourceTree = "<group>"; };
+		ED3A69852000A9B800AAA272 /* ConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleView.swift; sourceTree = "<group>"; };
 		ED5CB5341F4A075400FF9CCA /* KARAS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KARAS-Bridging-Header.h"; sourceTree = "<group>"; };
-		ED5CB5351F4A075400FF9CCA /* USDTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = USDTest.mm; sourceTree = "<group>"; };
-		ED5CB5361F4A075400FF9CCA /* USDTest.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = USDTest.hpp; sourceTree = "<group>"; };
 		ED5F81D81F3E6A8E009F9596 /* toolUSD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = toolUSD.swift; sourceTree = "<group>"; };
 		ED770A971F49D3A5005A6518 /* toolAnimate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = toolAnimate.swift; sourceTree = "<group>"; };
 		EDA91BB41FF15D1D00E14B8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,8 +74,9 @@
 		EDA91BBC1FF2886600E14B8D /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		EDA91BBD1FF2886600E14B8D /* RoxigaMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoxigaMain.h; sourceTree = "<group>"; };
 		EDA91BBE1FF2886600E14B8D /* ShaderTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
-		EDA91BC91FF28A1400E14B8D /* Plugins.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = Plugins.md; path = KARAS/Plugins.md; sourceTree = SOURCE_ROOT; };
-		EDD48A991FA43E77002858F9 /* README_ja.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README_ja.md; sourceTree = "<group>"; };
+		EDB79582201D8C40008E79B1 /* adapterGit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = adapterGit.m; sourceTree = "<group>"; };
+		EDB79583201D8C40008E79B1 /* Plugins.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Plugins.md; sourceTree = "<group>"; };
+		EDB79584201D8C40008E79B1 /* adapterGit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adapterGit.h; sourceTree = "<group>"; };
 		EDDA01191F4F270C001F0A18 /* Primitive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Primitive.swift; sourceTree = "<group>"; };
 		EDE78A871EBC77FD000113A5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EDEEFF531F8A35CB00E4785F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -86,8 +84,6 @@
 		EDF08DC71FF3D2770036F476 /* ObjectiveGit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectiveGit.framework; path = Carthage/Build/Mac/ObjectiveGit.framework; sourceTree = "<group>"; };
 		EDF08DCA1FF3D8BB0036F476 /* toolSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toolSelection.swift; sourceTree = "<group>"; };
 		EDF08DCC1FF3DD340036F476 /* toolGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toolGeometry.swift; sourceTree = "<group>"; };
-		EDF08DCE1FF8672E0036F476 /* Hikaru.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hikaru.h; path = ../../../_res/MTL/RoxigaEngine/RoxigaEngine/Hikaru.h; sourceTree = "<group>"; };
-		EDF08DCF1FF8672E0036F476 /* Hikaru.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Hikaru.mm; path = ../../../_res/MTL/RoxigaEngine/RoxigaEngine/Hikaru.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				EDEEFF531F8A35CB00E4785F /* README.md */,
-				EDD48A991FA43E77002858F9 /* README_ja.md */,
 				EDEEFF541F8A373D00E4785F /* Note.md */,
 				ED32B95C1EB5D298000D8823 /* KARAS */,
 				ED32B95B1EB5D298000D8823 /* Products */,
@@ -142,9 +137,9 @@
 				EDE78A871EBC77FD000113A5 /* MyPlayground.playground */,
 				ED32B9631EB5D298000D8823 /* art.scnassets */,
 				EDA91BB41FF15D1D00E14B8D /* Assets.xcassets */,
-				EDA91BA41FF159BD00E14B8D /* engine */,
 				EDA91BA51FF15A6300E14B8D /* editor */,
-				EDA91BB31FF15BA400E14B8D /* extra */,
+				EDA91BA41FF159BD00E14B8D /* engine */,
+				EDB79581201D8C40008E79B1 /* extra */,
 				ED32B9671EB5D298000D8823 /* MainMenu.xib */,
 				ED32B9981EBA0629000D8823 /* ConsoleViewController.xib */,
 				ED32B96A1EB5D298000D8823 /* Info.plist */,
@@ -160,17 +155,12 @@
 				EDA91BBA1FF2886500E14B8D /* Renderer.h */,
 				EDA91BB71FF2886500E14B8D /* Renderer.mm */,
 				EDA91BBD1FF2886600E14B8D /* RoxigaMain.h */,
-				EDF08DCE1FF8672E0036F476 /* Hikaru.h */,
-				EDF08DCF1FF8672E0036F476 /* Hikaru.mm */,
 				EDA91BB81FF2886500E14B8D /* RoxigaModel.h */,
 				EDA91BBB1FF2886600E14B8D /* RoxigaModel.mm */,
 				EDA91BBC1FF2886600E14B8D /* Shaders.metal */,
 				EDA91BBE1FF2886600E14B8D /* ShaderTypes.h */,
-				ED5CB5351F4A075400FF9CCA /* USDTest.mm */,
-				ED5CB5361F4A075400FF9CCA /* USDTest.hpp */,
-				ED32B9761EB5D734000D8823 /* SCNMath.swift */,
+				ED32B9761EB5D734000D8823 /* Math.swift */,
 				EDDA01191F4F270C001F0A18 /* Primitive.swift */,
-				ED32B97A1EB5D76F000D8823 /* QuadNode.swift */,
 				ED32B9781EB5D75C000D8823 /* SCNTemplate.swift */,
 				ED32B9821EB5DC2E000D8823 /* Serializer.swift */,
 			);
@@ -181,8 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				ED32B95D1EB5D298000D8823 /* AppDelegate.swift */,
-				ED32B9611EB5D298000D8823 /* GameViewController.swift */,
 				ED32B95F1EB5D298000D8823 /* GameView.swift */,
+				ED3A69852000A9B800AAA272 /* ConsoleView.swift */,
+				ED32B9611EB5D298000D8823 /* GameViewController.swift */,
 				ED32B99C1EBA0BAD000D8823 /* GameViewOverlay.swift */,
 				ED32B9701EB5D58B000D8823 /* GizmoView.swift */,
 				ED32B9801EB5DC1A000D8823 /* toolGit.swift */,
@@ -194,14 +185,16 @@
 			path = editor;
 			sourceTree = "<group>";
 		};
-		EDA91BB31FF15BA400E14B8D /* extra */ = {
+		EDB79581201D8C40008E79B1 /* extra */ = {
 			isa = PBXGroup;
 			children = (
-				EDA91BC91FF28A1400E14B8D /* Plugins.md */,
+				EDB79582201D8C40008E79B1 /* adapterGit.m */,
+				EDB79583201D8C40008E79B1 /* Plugins.md */,
+				EDB79584201D8C40008E79B1 /* adapterGit.h */,
 			);
 			name = extra;
-			path = extr;
-			sourceTree = "<group>";
+			path = KARAS/extra;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -210,11 +203,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDF08DD01FF8672E0036F476 /* Hikaru.h in Headers */,
-				ED5CB5381F4A075400FF9CCA /* USDTest.hpp in Headers */,
 				EDA91BC71FF2886600E14B8D /* RoxigaMain.h in Headers */,
 				EDA91BC21FF2886600E14B8D /* RoxigaModel.h in Headers */,
 				EDA91BC81FF2886600E14B8D /* ShaderTypes.h in Headers */,
+				EDB79587201D8C40008E79B1 /* adapterGit.h in Headers */,
 				EDA91BBF1FF2886600E14B8D /* AAPLTransforms.h in Headers */,
 				EDA91BC41FF2886600E14B8D /* Renderer.h in Headers */,
 			);
@@ -286,6 +278,7 @@
 				ED32B99A1EBA0629000D8823 /* ConsoleViewController.xib in Resources */,
 				ED32B9641EB5D298000D8823 /* art.scnassets in Resources */,
 				ED32B9691EB5D298000D8823 /* MainMenu.xib in Resources */,
+				EDB79586201D8C40008E79B1 /* Plugins.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,27 +308,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDB79585201D8C40008E79B1 /* adapterGit.m in Sources */,
 				ED32B9601EB5D298000D8823 /* GameView.swift in Sources */,
 				ED32B9811EB5DC1A000D8823 /* toolGit.swift in Sources */,
-				ED5CB5371F4A075400FF9CCA /* USDTest.mm in Sources */,
 				ED32B9621EB5D298000D8823 /* GameViewController.swift in Sources */,
-				ED32B97B1EB5D76F000D8823 /* QuadNode.swift in Sources */,
 				ED32B9711EB5D58B000D8823 /* GizmoView.swift in Sources */,
 				ED770A981F49D3A5005A6518 /* toolAnimate.swift in Sources */,
 				EDDA011A1F4F270C001F0A18 /* Primitive.swift in Sources */,
+				ED3A69862000A9B800AAA272 /* ConsoleView.swift in Sources */,
 				ED32B99D1EBA0BAD000D8823 /* GameViewOverlay.swift in Sources */,
 				ED32B9831EB5DC2E000D8823 /* Serializer.swift in Sources */,
 				EDF08DCB1FF3D8BB0036F476 /* toolSelection.swift in Sources */,
 				ED5F81D91F3E6A8E009F9596 /* toolUSD.swift in Sources */,
 				EDA91BC31FF2886600E14B8D /* AAPLTransforms.mm in Sources */,
 				EDA91BC61FF2886600E14B8D /* Shaders.metal in Sources */,
-				ED32B9771EB5D734000D8823 /* SCNMath.swift in Sources */,
+				ED32B9771EB5D734000D8823 /* Math.swift in Sources */,
 				EDF08DCD1FF3DD340036F476 /* toolGeometry.swift in Sources */,
 				ED32B9791EB5D75C000D8823 /* SCNTemplate.swift in Sources */,
 				EDA91BC51FF2886600E14B8D /* RoxigaModel.mm in Sources */,
 				EDA91BC11FF2886600E14B8D /* Renderer.mm in Sources */,
 				ED32B95E1EB5D298000D8823 /* AppDelegate.swift in Sources */,
-				EDF08DD11FF8672E0036F476 /* Hikaru.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

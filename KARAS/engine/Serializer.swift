@@ -26,7 +26,7 @@ public func usdFilePath (fileName : String) -> URL {
     let documentsPath = NSURL(fileURLWithPath:
         NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])
     
-    let path = documentsPath.appendingPathComponent("KARASExport")
+    let path = documentsPath.appendingPathComponent("_res/KARASExport")
     do {
         try FileManager.default.createDirectory(at: path!, withIntermediateDirectories: true, attributes: nil)
     } catch let error as NSError {
@@ -37,10 +37,9 @@ public func usdFilePath (fileName : String) -> URL {
     return exportFile!
 }
 
-class USDImporter {
-
-}
-
+// ## Element
+// * Light
+// * Material
 extension MDLAsset {
     
 }
@@ -56,30 +55,107 @@ class USDExporter {
     }
 
     /*
-     ## Animation
-     * transform
-     * skeltal
-     * Vertex
-     
-     ## Element
-     * Light
-     * Material
+     1. edit
+     2. export
+     3. git commit
+     4. import
      */
     
-    public static func exportFromAsset(scene: SCNScene) {
+    public static func exportFromAsset(scene: SCNScene) -> MDLAsset {
+        
+        // Y-Up
         let asset = MDLAsset(scnScene: scene)
+        asset.upAxis = vector_float3([0, 1, 0])
         
-        asset.upAxis = vector_float3(0, 0, 1)
-        asset.startTime = 1
+        // add MDLLight and MDLMaterial
+        scene.rootNode.enumerateChildNodes({ child, _ in
+            if (child.light != nil) {
+//                let light = MDLAreaLight(scnLight: child.light!)
+//                light.name = (child.light?.name)!
+//                asset.add(light)
+            }
+            
+            if (child.geometry != nil) {
+                let scatteringFunction = MDLScatteringFunction()
+                let material = MDLMaterial(name: "baseMaterial", scatteringFunction: scatteringFunction)
+    //            material.setTextureProperties(textures:[.baseColor: "diffuse.jpg", .specular: "specular.jpg"])
+
+                material.setProperty(MDLMaterialProperty(name: "color", semantic: .baseColor, color: CGColor.black))
+                // Apply the texture to every submesh of the asset
+                for submesh in (MDLMesh(scnGeometry: child.geometry!).submeshes!)  {
+                    if let submesh = submesh as? MDLSubmesh {
+                        submesh.material = material
+                    }
+                }
+            }
+        })
+        gitInit(url: "ooo")
         
-        let exportFile = usdFilePath(fileName: "model.usda")
+        // export with ascii format
+        let exportFile = usdFilePath(fileName: "model.usd")
         try! asset.export(to: exportFile)
+        USDCat(infile: exportFile.path, outfile: exportFile.path)
+        
+        // TODO: バイナリでも追記できるか試してみたい
+        write(url: exportFile, text: "\ndef Cube \"cylinder\" {\n}")
+        
+        // import from ascii
+        scene.rootNode.enumerateChildNodes({ child, _ in
+            child.removeFromParentNode()
+        })
+        let masset = MDLAsset(url: URL(fileURLWithPath: exportFile.path))
+//        let object = asset.childObjects(of: MDLMesh.self) as? [MDLMesh]
+        
+//        guard let cameras = asset.childObjects(of: MDLCamera.self) as? [MDLCamera], cameras.count > 0 else {
+//            print("No cameras found")
+//            return
+//        }
+        
+        // Create subdivision mesh
+//        for (index, _) in (object?.submeshes!.enumerated())! {
+//            let mesh = MDLMesh.newSubdividedMesh(object!, submeshIndex: index, subdivisionLevels: 1)
+//            let geometry = SCNGeometry(mdlMesh: mesh!)
+//            let geometryNode = SCNNode(geometry: geometry)
+//            geometryNode.position = SCNVector3(x: 5, y: 0, z: 0)
+//            scene.rootNode.addChildNode(geometryNode)
+//        }
+        
+//        let scatteringFunction = MDLScatteringFunction()
+//        let material = MDLMaterial(name: "baseMaterial", scatteringFunction: scatteringFunction)
+////        material.setTextureProperties(textures: [.baseColor : textureurl])
+//
+//        material.setProperty(MDLMaterialProperty(name: "color", semantic: .baseColor, color: CGColor.black))
+//        //Apply the texture to every submesh of the asset
+//        for submesh in object![0].submeshes!  {
+//            if let submesh = submesh as? MDLSubmesh {
+//                submesh.material = material
+//            }
+//        }
+//        masset.add(object![0])
+        return masset
+    }
+    
+    public static func write(url: URL, text: String) -> Bool {
+        guard let stream = OutputStream(url: url, append: true) else {
+            return false
+        }
+        stream.open()
+        
+        defer {
+            stream.close()
+        }
+        
+        guard let data = text.data(using: .utf8) else { return false }
+        
+        let result = data.withUnsafeBytes {
+            stream.write($0, maxLength: data.count)
+        }
+        return (result > 0)
     }
 
     public static func exportFromText() {
-        let filePath = usdFilePath(fileName: "cube.usda")
-        let fileObject =
-        """
+        let filePath = usdFilePath(fileName: "cube.usd")
+        let fileObject = """
         #usda 1.0
         def Cube \"Cube1\" {
         }
@@ -107,4 +183,14 @@ class USDExporter {
 //        }
     }
 
+}
+
+extension MDLMaterial {
+    func setTextureProperties(textures: [MDLMaterialSemantic:URL]) -> Void {
+        for (key,value) in textures {
+            let name = value.path
+            let property = MDLMaterialProperty(name:name, semantic: key, url: value)
+            self.setProperty(property)
+        }
+    }
 }

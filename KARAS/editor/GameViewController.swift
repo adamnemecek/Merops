@@ -11,18 +11,29 @@ import MetalKit
 import SpriteKit
 import SceneKit
 import QuartzCore
+import CoreML
 
-class GameViewController: SuperViewController, SCNSceneRendererDelegate {
+
+class GameViewController: SuperViewController, SCNSceneRendererDelegate, SCNNodeRendererDelegate {
     
-    @IBOutlet weak var gameView: GameView!
-    let scene = SCNScene()
-    
+    // Model
+    var scene = SCNScene()
     var models : [SCNNode] = []
+    
+    // View
+    @IBOutlet weak var gameView: GameView!
+    var console: ConsoleView!
+    var overray : GameViewOverlay!
+    var w : CGFloat!
+    var h : CGFloat!
+    
+    // Metal
     var device:MTLDevice!
     var commandQueue: MTLCommandQueue!
-    var renderer: SCNRenderer!
-    var metalLayer : CAMetalLayer!
-    var overray : GameViewOverlay!
+    var render: SCNRenderer!
+    var metalBuffer : MTLCommandBuffer!
+    var metalRenderDescripter : MTLRenderPassDescriptor!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,84 +43,87 @@ class GameViewController: SuperViewController, SCNSceneRendererDelegate {
         super.viewDidLoad()
         sceneInit()
         
+        // HUD
+        self.gameView.overlaySKScene = GameViewOverlay(
+            size: self.gameView.frame.size, view: self.gameView
+        )
+        overray = self.gameView.overlaySKScene as! GameViewOverlay
+        overray.isUserInteractionEnabled = false
+        
+        // Console
+        console = ConsoleView(frame: self.gameView.frame)
+        self.gameView.addSubview(console)
+        console.isHidden = true
+        
+        w = self.gameView.frame.size.width
+        h = self.gameView.frame.size.height
+        
         // Metal Render
         if self.gameView.renderingAPI == SCNRenderingAPI.metal {
-//
-//            device = self.gameView.device
-//            metalLayer = CAMetalLayer()
-//            metalLayer.device = device
-//            metalLayer.pixelFormat = .bgra8Unorm
-//            metalLayer.framebufferOnly = true
-//            metalLayer.frame = self.gameView.frame
-//            commandQueue = device.makeCommandQueue()
-//            renderer = SCNRenderer(device: device, options: nil)
-//            self.gameView.layer?.addSublayer(metalLayer)
-            
+            device = MTLCreateSystemDefaultDevice()
+            commandQueue = device.makeCommandQueue()
+            render = SCNRenderer(device: device, options: nil)
+            render.scene = scene
         } else {
             fatalError("Metal only")
         }
         
-        // HUD
-        self.gameView.overlaySKScene = GameViewOverlay(size: self.gameView.frame.size, view: self.gameView)
-        overray = self.gameView.overlaySKScene as! GameViewOverlay
-        overray.isUserInteractionEnabled = false
-        
         // set the scene to the view
-        self.gameView.scene = scene
+        self.gameView.scene = render.scene
         self.gameView.allowsCameraControl = true
         self.gameView.showsStatistics = true
         self.gameView.backgroundColor = Color.black
         self.gameView.autoenablesDefaultLighting = true
-        self.gameView.defaultCameraController.clearRoll()
         self.gameView.delegate = self
     }
 
     func sceneInit() {
-        // Box
+        
+        // Geometry
+        scene.rootNode.name = "root"
         scene.rootNode.addChildNode(
             custumGeo()
         )
-        
-        
-        // camera
-        let camera = createCam()
-        scene.rootNode.addChildNode(camera)
+        // camera ポジションのせいでファイルが消えるので注意
+        let camera = createCam(name: "camera1")
         camera.position = SCNVector3(x: 0, y: 5, z: 30)
-
-        // USD
-        let local = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as! String
-        gitInit(url: local + "/ooo")
-        gitClone(url: "https://github.com/sho7noka/adobe-tools.git")
-        USDEdit(infile: "/Users/sumioka_air/Documents/_res/_3d/cube.usda")
-        USDExporter.exportFromAsset(scene: scene)
-        USDExporter.exportFromText()
+        let light = createLight(name: "light1")
+        scene.rootNode.addChildNode(light)
+        
+        // asset initialize
+        let asset = USDExporter.exportFromAsset(scene: scene)
+        scene = SCNScene(mdlAsset: asset)
+        
+        self.gameView.defaultCameraController.clearRoll()
     }
     
-//    func renderer(_ renderer: SCNSceneRenderer,
-//                  willRenderScene scene: SCNScene,
-//                  atTime time: TimeInterval)
-//    {
-//        metalRender()
-//    }
     
-    func metalRender() {
-        let viewport = CGRect(x: 0, y: 0, width: CGFloat(100), height: CGFloat(100))
-        guard let drawable = metalLayer.nextDrawable() else { return }
-        
-        
+    func renderer(_ renderer: SCNSceneRenderer, willRenderScene scene: SCNScene,
+                  atTime time: TimeInterval)
+    {
+        let viewport = CGRect(x: 0, y: 0, width: w, height: h)
         let renderPassDescriptor = MTLRenderPassDescriptor()
         renderPassDescriptor.colorAttachments[0].loadAction = .clear
         renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(0, 1, 0, 1.0); //green
         renderPassDescriptor.colorAttachments[0].storeAction = .store
         
         let commandBuffer = commandQueue.makeCommandBuffer()
+        let renderEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
+//        renderEncoder?.endEncoding()
         
-        renderer.scene = scene
-        renderer.pointOfView = self.gameView.pointOfView
-        renderer.render(atTime: 0, viewport: viewport, commandBuffer: commandBuffer!, passDescriptor: renderPassDescriptor)
-        
-        commandBuffer?.present(drawable)
+        // TODO: ジオメトリのバーテックスを渡してMetal シェーダで処理して戻す
+        scene.rootNode.enumerateChildNodes({child, _ in
+            child.geometry?.sources(for: .vertex).forEach {
+                print($0)
+            }
+        })
+        // reuse scene1 and the current point of view
+        render.scene = scene
+        render.pointOfView = self.gameView.pointOfView
+        render.render(atTime: 0, viewport: viewport,
+                      commandBuffer: commandBuffer!, passDescriptor: renderPassDescriptor)
         commandBuffer?.commit()
+        commandBuffer?.waitUntilCompleted()
     }
     
     func resetView(_mode: EditMode = EditMode.ObjectMode,
@@ -211,8 +225,8 @@ class GameViewController: SuperViewController, SCNSceneRendererDelegate {
     }
     
     func getModels() {
-        for node in models {
-            self.gameView.scene?.rootNode.addChildNode(node)
+        models.forEach {
+            self.gameView.scene?.rootNode.addChildNode($0)
         }
         models.removeAll()
     }
@@ -282,7 +296,6 @@ class GameViewController: SuperViewController, SCNSceneRendererDelegate {
         default:
             break
         }
-
         // View Update
         gameView.draw(NSRect(x: 0, y: 0, width: 1000, height: 1000))
         gameView.needsDisplay = true

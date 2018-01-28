@@ -2,10 +2,22 @@
 Next Generation DCC  for Mac and iOS.
 [DownLoad](http://github.com)
 
-## OverViews
-* FlontEnd :  ```Scenekit```  and  ```Metal2```
-* BackEnd : [libgit](http://github.com) support
-* [USD](http://google.co.jp) support
+## Concept
+- iterable: [libgit](http://github.com) infinity undo.
+- simple: [USD](http://google.co.jp) support
+- fastest: ```Scenekit```  and  ```Metal2``` Metal Shader base Modifier.
+
+
+### support
+- geometry
+- animation
+- layout
+
+### Not surport
+- lookDev
+- Simulation
+- Rendering
+
 
 ## Contribute
 Please Read [Contribute](../Contribute.md) guide.

@@ -113,7 +113,7 @@ class GameView: SCNView {
         super.setFrameSize(newSize)
         (overlaySKScene as? GameViewOverlay)?.layout2DOverlay()
     }
-
+    
     override func draw(_ dirtyRect: NSRect) {
         if let result = selection {
             switch part {
@@ -290,6 +290,8 @@ class GameView: SCNView {
                     selection!.node.position = selection!.node.convertPosition(
                         marken!.position, from: selection!.node
                     )
+//                    let asset = USDExporter.exportFromAsset(scene: self.scene!)
+//                    self.scene = SCNScene(mdlAsset: asset)
                 }
                 marken!.removeFromParentNode()
             }

@@ -30,6 +30,7 @@ typedef struct
 	float4 bone2;
 	float4 bone3;
 } bones;
+
 struct ColorInOut
 {
     float4 position [[position]];

@@ -50,10 +50,18 @@ func getNormal(v0: SCNVector3, v1: SCNVector3, v2: SCNVector3) -> SCNVector3 {
     return edgev0v1.cross(vector: edgev1v2)
 }
 
-func createCam() -> SCNNode {
+func createCam(name : String) -> SCNNode {
     let cameraNode = SCNNode()
+    cameraNode.name = name
     cameraNode.camera = SCNCamera()
     return cameraNode
+}
+
+func createLight(name : String) -> SCNNode {
+    let lightNode = SCNNode()
+    lightNode.name = name
+    lightNode.light = SCNLight()
+    return lightNode
 }
 
 
@@ -158,9 +166,10 @@ func custumGeo(half : Float = 2) -> SCNNode {
     
     // マテリアル
     let material = SCNMaterial()
-    material.lightingModel = .physicallyBased
-    material.diffuse.contents = NSImage(named: NSImage.Name(rawValue: "texture"))
-    material.metalness.contents = NSNumber(value: 0.5)
+//    material.lightingModel = .physicallyBased
+//    material.diffuse.contents = NSImage(named: NSImage.Name(rawValue: "texture"))
+//    material.metalness.contents = NSNumber(value: 0.5)
+    material.diffuse.contents = Color.red
     
     // ジオメトリ
     let customGeometry = SCNGeometry(
