@@ -6,11 +6,9 @@
 
 // libgit
 #import "ObjectiveGit/git2.h"
-#import "ObjectiveGit/GTObject.h"
-#import "ObjectiveGit/GTCommit.h"
-#import "ObjectiveGit/GTDiff.h"
-#import "ObjectiveGit/GTRemote.h"
-#import "ObjectiveGit/GTRepository.h"
-#import "ObjectiveGit/GTIndex.h"
-#import "ObjectiveGit/GTOID.h"
-#import "ObjectiveGit/GTTree.h"
+#import "ObjectiveGit/ObjectiveGit.h"
+
+// libusd
+#import "adapterUsd.h"
+
+// engine

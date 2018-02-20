@@ -11,4 +11,3 @@ typedef struct
 } Uniforms;
 
 #endif /* ShaderTypes_h */
-

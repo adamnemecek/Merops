@@ -23,6 +23,7 @@ typedef struct
 	packed_float2 uv;
 	float bone;
 } vertex_t;
+
 typedef struct
 {
 	float4 bone0;

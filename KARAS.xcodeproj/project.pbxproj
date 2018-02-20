@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED22217B2021447400427606 /* help.md in Resources */ = {isa = PBXBuildFile; fileRef = ED2221752021447400427606 /* help.md */; };
+		ED22217C2021447400427606 /* Metal.md in Resources */ = {isa = PBXBuildFile; fileRef = ED2221762021447400427606 /* Metal.md */; };
+		ED22217D2021447400427606 /* usd.md in Resources */ = {isa = PBXBuildFile; fileRef = ED2221772021447400427606 /* usd.md */; };
+		ED22217E2021447400427606 /* git.md in Resources */ = {isa = PBXBuildFile; fileRef = ED2221782021447400427606 /* git.md */; };
+		ED22217F2021447400427606 /* objective.md in Resources */ = {isa = PBXBuildFile; fileRef = ED2221792021447400427606 /* objective.md */; };
+		ED2221832021E17C00427606 /* MetalMeshDeformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2221812021E17C00427606 /* MetalMeshDeformable.swift */; };
+		ED2221842021E17C00427606 /* DeformCompute.metal in Sources */ = {isa = PBXBuildFile; fileRef = ED2221822021E17C00427606 /* DeformCompute.metal */; };
 		ED24CD311F26623A000CC0BB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED24CD2E1F26623A000CC0BB /* Alamofire.framework */; };
 		ED24CD321F26623A000CC0BB /* SwifterSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED24CD2F1F26623A000CC0BB /* SwifterSwift.framework */; };
 		ED32B95E1EB5D298000D8823 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32B95D1EB5D298000D8823 /* AppDelegate.swift */; };
@@ -21,6 +28,7 @@
 		ED32B9831EB5DC2E000D8823 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32B9821EB5DC2E000D8823 /* Serializer.swift */; };
 		ED32B99A1EBA0629000D8823 /* ConsoleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED32B9981EBA0629000D8823 /* ConsoleViewController.xib */; };
 		ED32B99D1EBA0BAD000D8823 /* GameViewOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED32B99C1EBA0BAD000D8823 /* GameViewOverlay.swift */; };
+		ED3803772026C94100F2740A /* DrawPrimitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3803762026C94100F2740A /* DrawPrimitives.swift */; };
 		ED3A69862000A9B800AAA272 /* ConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3A69852000A9B800AAA272 /* ConsoleView.swift */; };
 		ED5F81D91F3E6A8E009F9596 /* toolUSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F81D81F3E6A8E009F9596 /* toolUSD.swift */; };
 		ED770A981F49D3A5005A6518 /* toolAnimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED770A971F49D3A5005A6518 /* toolAnimate.swift */; };
@@ -33,9 +41,9 @@
 		EDA91BC61FF2886600E14B8D /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EDA91BBC1FF2886600E14B8D /* Shaders.metal */; };
 		EDA91BC71FF2886600E14B8D /* RoxigaMain.h in Headers */ = {isa = PBXBuildFile; fileRef = EDA91BBD1FF2886600E14B8D /* RoxigaMain.h */; };
 		EDA91BC81FF2886600E14B8D /* ShaderTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = EDA91BBE1FF2886600E14B8D /* ShaderTypes.h */; };
-		EDB79585201D8C40008E79B1 /* adapterGit.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB79582201D8C40008E79B1 /* adapterGit.m */; };
 		EDB79586201D8C40008E79B1 /* Plugins.md in Resources */ = {isa = PBXBuildFile; fileRef = EDB79583201D8C40008E79B1 /* Plugins.md */; };
-		EDB79587201D8C40008E79B1 /* adapterGit.h in Headers */ = {isa = PBXBuildFile; fileRef = EDB79584201D8C40008E79B1 /* adapterGit.h */; };
+		EDCAB6ED201F490200674C38 /* adapterUsd.mm in Sources */ = {isa = PBXBuildFile; fileRef = EDCAB6EC201F490200674C38 /* adapterUsd.mm */; };
+		EDCAB6EF201F4D8400674C38 /* toolSketchfab.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCAB6EE201F4D8400674C38 /* toolSketchfab.swift */; };
 		EDDA011A1F4F270C001F0A18 /* Primitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA01191F4F270C001F0A18 /* Primitive.swift */; };
 		EDF08DC81FF3D2770036F476 /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF08DC71FF3D2770036F476 /* ObjectiveGit.framework */; };
 		EDF08DCB1FF3D8BB0036F476 /* toolSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF08DCA1FF3D8BB0036F476 /* toolSelection.swift */; };
@@ -43,6 +51,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED2221742021447400427606 /* Shader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shader.metal; sourceTree = "<group>"; };
+		ED2221752021447400427606 /* help.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = help.md; sourceTree = "<group>"; };
+		ED2221762021447400427606 /* Metal.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Metal.md; sourceTree = "<group>"; };
+		ED2221772021447400427606 /* usd.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = usd.md; sourceTree = "<group>"; };
+		ED2221782021447400427606 /* git.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = git.md; sourceTree = "<group>"; };
+		ED2221792021447400427606 /* objective.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = objective.md; sourceTree = "<group>"; };
+		ED2221812021E17C00427606 /* MetalMeshDeformable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalMeshDeformable.swift; sourceTree = "<group>"; };
+		ED2221822021E17C00427606 /* DeformCompute.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = DeformCompute.metal; sourceTree = "<group>"; };
 		ED24CD2E1F26623A000CC0BB /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		ED24CD2F1F26623A000CC0BB /* SwifterSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifterSwift.framework; path = Carthage/Build/Mac/SwifterSwift.framework; sourceTree = "<group>"; };
 		ED2600A11F585E2D0031F4EF /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
@@ -60,11 +76,12 @@
 		ED32B9821EB5DC2E000D8823 /* Serializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
 		ED32B9981EBA0629000D8823 /* ConsoleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsoleViewController.xib; sourceTree = "<group>"; };
 		ED32B99C1EBA0BAD000D8823 /* GameViewOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewOverlay.swift; sourceTree = "<group>"; };
+		ED3803762026C94100F2740A /* DrawPrimitives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawPrimitives.swift; sourceTree = "<group>"; };
 		ED3A69852000A9B800AAA272 /* ConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleView.swift; sourceTree = "<group>"; };
 		ED5CB5341F4A075400FF9CCA /* KARAS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KARAS-Bridging-Header.h"; sourceTree = "<group>"; };
 		ED5F81D81F3E6A8E009F9596 /* toolUSD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = toolUSD.swift; sourceTree = "<group>"; };
 		ED770A971F49D3A5005A6518 /* toolAnimate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = toolAnimate.swift; sourceTree = "<group>"; };
-		EDA91BB41FF15D1D00E14B8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EDA91BB41FF15D1D00E14B8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = extra/Assets.xcassets; sourceTree = "<group>"; };
 		EDA91BB51FF2886500E14B8D /* AAPLTransforms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLTransforms.h; sourceTree = "<group>"; };
 		EDA91BB71FF2886500E14B8D /* Renderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Renderer.mm; sourceTree = "<group>"; };
 		EDA91BB81FF2886500E14B8D /* RoxigaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoxigaModel.h; sourceTree = "<group>"; };
@@ -74,13 +91,12 @@
 		EDA91BBC1FF2886600E14B8D /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		EDA91BBD1FF2886600E14B8D /* RoxigaMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoxigaMain.h; sourceTree = "<group>"; };
 		EDA91BBE1FF2886600E14B8D /* ShaderTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
-		EDB79582201D8C40008E79B1 /* adapterGit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = adapterGit.m; sourceTree = "<group>"; };
 		EDB79583201D8C40008E79B1 /* Plugins.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Plugins.md; sourceTree = "<group>"; };
-		EDB79584201D8C40008E79B1 /* adapterGit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adapterGit.h; sourceTree = "<group>"; };
+		EDCAB6EB201F48EC00674C38 /* adapterUsd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = adapterUsd.h; sourceTree = "<group>"; };
+		EDCAB6EC201F490200674C38 /* adapterUsd.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = adapterUsd.mm; sourceTree = "<group>"; };
+		EDCAB6EE201F4D8400674C38 /* toolSketchfab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toolSketchfab.swift; sourceTree = "<group>"; };
 		EDDA01191F4F270C001F0A18 /* Primitive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Primitive.swift; sourceTree = "<group>"; };
-		EDE78A871EBC77FD000113A5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EDEEFF531F8A35CB00E4785F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		EDEEFF541F8A373D00E4785F /* Note.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Note.md; sourceTree = "<group>"; };
 		EDF08DC71FF3D2770036F476 /* ObjectiveGit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectiveGit.framework; path = Carthage/Build/Mac/ObjectiveGit.framework; sourceTree = "<group>"; };
 		EDF08DCA1FF3D8BB0036F476 /* toolSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toolSelection.swift; sourceTree = "<group>"; };
 		EDF08DCC1FF3DD340036F476 /* toolGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toolGeometry.swift; sourceTree = "<group>"; };
@@ -100,6 +116,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED2221732021447400427606 /* Metalmd */ = {
+			isa = PBXGroup;
+			children = (
+				ED2221762021447400427606 /* Metal.md */,
+				ED2221752021447400427606 /* help.md */,
+				ED2221772021447400427606 /* usd.md */,
+				ED2221782021447400427606 /* git.md */,
+				ED2221792021447400427606 /* objective.md */,
+				ED2221742021447400427606 /* Shader.metal */,
+			);
+			path = Metalmd;
+			sourceTree = "<group>";
+		};
 		ED24CD2D1F26623A000CC0BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,7 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				EDEEFF531F8A35CB00E4785F /* README.md */,
-				EDEEFF541F8A373D00E4785F /* Note.md */,
+				ED2221732021447400427606 /* Metalmd */,
 				ED32B95C1EB5D298000D8823 /* KARAS */,
 				ED32B95B1EB5D298000D8823 /* Products */,
 				ED24CD2D1F26623A000CC0BB /* Frameworks */,
@@ -134,14 +163,13 @@
 			isa = PBXGroup;
 			children = (
 				ED5CB5341F4A075400FF9CCA /* KARAS-Bridging-Header.h */,
-				EDE78A871EBC77FD000113A5 /* MyPlayground.playground */,
 				ED32B9631EB5D298000D8823 /* art.scnassets */,
-				EDA91BB41FF15D1D00E14B8D /* Assets.xcassets */,
 				EDA91BA51FF15A6300E14B8D /* editor */,
 				EDA91BA41FF159BD00E14B8D /* engine */,
 				EDB79581201D8C40008E79B1 /* extra */,
 				ED32B9671EB5D298000D8823 /* MainMenu.xib */,
 				ED32B9981EBA0629000D8823 /* ConsoleViewController.xib */,
+				EDA91BB41FF15D1D00E14B8D /* Assets.xcassets */,
 				ED32B96A1EB5D298000D8823 /* Info.plist */,
 			);
 			path = KARAS;
@@ -150,6 +178,9 @@
 		EDA91BA41FF159BD00E14B8D /* engine */ = {
 			isa = PBXGroup;
 			children = (
+				EDB683432025D59400AD75EE /* adapter */,
+				EDA91BBC1FF2886600E14B8D /* Shaders.metal */,
+				EDA91BBE1FF2886600E14B8D /* ShaderTypes.h */,
 				EDA91BB51FF2886500E14B8D /* AAPLTransforms.h */,
 				EDA91BB91FF2886500E14B8D /* AAPLTransforms.mm */,
 				EDA91BBA1FF2886500E14B8D /* Renderer.h */,
@@ -157,12 +188,7 @@
 				EDA91BBD1FF2886600E14B8D /* RoxigaMain.h */,
 				EDA91BB81FF2886500E14B8D /* RoxigaModel.h */,
 				EDA91BBB1FF2886600E14B8D /* RoxigaModel.mm */,
-				EDA91BBC1FF2886600E14B8D /* Shaders.metal */,
-				EDA91BBE1FF2886600E14B8D /* ShaderTypes.h */,
-				ED32B9761EB5D734000D8823 /* Math.swift */,
-				EDDA01191F4F270C001F0A18 /* Primitive.swift */,
-				ED32B9781EB5D75C000D8823 /* SCNTemplate.swift */,
-				ED32B9821EB5DC2E000D8823 /* Serializer.swift */,
+				EDB683412025D43200AD75EE /* scn */,
 			);
 			path = engine;
 			sourceTree = "<group>";
@@ -172,28 +198,74 @@
 			children = (
 				ED32B95D1EB5D298000D8823 /* AppDelegate.swift */,
 				ED32B95F1EB5D298000D8823 /* GameView.swift */,
-				ED3A69852000A9B800AAA272 /* ConsoleView.swift */,
 				ED32B9611EB5D298000D8823 /* GameViewController.swift */,
 				ED32B99C1EBA0BAD000D8823 /* GameViewOverlay.swift */,
 				ED32B9701EB5D58B000D8823 /* GizmoView.swift */,
+				ED3A69852000A9B800AAA272 /* ConsoleView.swift */,
+				EDB683442025D7EF00AD75EE /* tools */,
+				ED3803762026C94100F2740A /* DrawPrimitives.swift */,
+			);
+			path = editor;
+			sourceTree = "<group>";
+		};
+		EDB683412025D43200AD75EE /* scn */ = {
+			isa = PBXGroup;
+			children = (
+				ED2221822021E17C00427606 /* DeformCompute.metal */,
+				ED2221812021E17C00427606 /* MetalMeshDeformable.swift */,
+				ED32B9761EB5D734000D8823 /* Math.swift */,
+				EDDA01191F4F270C001F0A18 /* Primitive.swift */,
+				ED32B9781EB5D75C000D8823 /* SCNTemplate.swift */,
+				ED32B9821EB5DC2E000D8823 /* Serializer.swift */,
+			);
+			name = scn;
+			sourceTree = "<group>";
+		};
+		EDB683432025D59400AD75EE /* adapter */ = {
+			isa = PBXGroup;
+			children = (
+				EDCAB6EB201F48EC00674C38 /* adapterUsd.h */,
+				EDCAB6EC201F490200674C38 /* adapterUsd.mm */,
+			);
+			name = adapter;
+			sourceTree = "<group>";
+		};
+		EDB683442025D7EF00AD75EE /* tools */ = {
+			isa = PBXGroup;
+			children = (
 				ED32B9801EB5DC1A000D8823 /* toolGit.swift */,
 				ED5F81D81F3E6A8E009F9596 /* toolUSD.swift */,
 				ED770A971F49D3A5005A6518 /* toolAnimate.swift */,
 				EDF08DCA1FF3D8BB0036F476 /* toolSelection.swift */,
 				EDF08DCC1FF3DD340036F476 /* toolGeometry.swift */,
+				EDCAB6EE201F4D8400674C38 /* toolSketchfab.swift */,
 			);
-			path = editor;
+			name = tools;
 			sourceTree = "<group>";
 		};
 		EDB79581201D8C40008E79B1 /* extra */ = {
 			isa = PBXGroup;
 			children = (
-				EDB79582201D8C40008E79B1 /* adapterGit.m */,
+				EDCAB6EA201EAC6600674C38 /* unity */,
+				EDCAB6E9201EAC5E00674C38 /* maya */,
 				EDB79583201D8C40008E79B1 /* Plugins.md */,
-				EDB79584201D8C40008E79B1 /* adapterGit.h */,
 			);
 			name = extra;
 			path = KARAS/extra;
+			sourceTree = SOURCE_ROOT;
+		};
+		EDCAB6E9201EAC5E00674C38 /* maya */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = maya;
+			sourceTree = SOURCE_ROOT;
+		};
+		EDCAB6EA201EAC6600674C38 /* unity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = unity;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -206,7 +278,6 @@
 				EDA91BC71FF2886600E14B8D /* RoxigaMain.h in Headers */,
 				EDA91BC21FF2886600E14B8D /* RoxigaModel.h in Headers */,
 				EDA91BC81FF2886600E14B8D /* ShaderTypes.h in Headers */,
-				EDB79587201D8C40008E79B1 /* adapterGit.h in Headers */,
 				EDA91BBF1FF2886600E14B8D /* AAPLTransforms.h in Headers */,
 				EDA91BC41FF2886600E14B8D /* Renderer.h in Headers */,
 			);
@@ -276,9 +347,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED32B99A1EBA0629000D8823 /* ConsoleViewController.xib in Resources */,
+				ED22217E2021447400427606 /* git.md in Resources */,
 				ED32B9641EB5D298000D8823 /* art.scnassets in Resources */,
+				ED22217F2021447400427606 /* objective.md in Resources */,
 				ED32B9691EB5D298000D8823 /* MainMenu.xib in Resources */,
 				EDB79586201D8C40008E79B1 /* Plugins.md in Resources */,
+				ED22217D2021447400427606 /* usd.md in Resources */,
+				ED22217C2021447400427606 /* Metal.md in Resources */,
+				ED22217B2021447400427606 /* help.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,8 +384,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDB79585201D8C40008E79B1 /* adapterGit.m in Sources */,
 				ED32B9601EB5D298000D8823 /* GameView.swift in Sources */,
+				ED3803772026C94100F2740A /* DrawPrimitives.swift in Sources */,
 				ED32B9811EB5DC1A000D8823 /* toolGit.swift in Sources */,
 				ED32B9621EB5D298000D8823 /* GameViewController.swift in Sources */,
 				ED32B9711EB5D58B000D8823 /* GizmoView.swift in Sources */,
@@ -317,10 +393,13 @@
 				EDDA011A1F4F270C001F0A18 /* Primitive.swift in Sources */,
 				ED3A69862000A9B800AAA272 /* ConsoleView.swift in Sources */,
 				ED32B99D1EBA0BAD000D8823 /* GameViewOverlay.swift in Sources */,
+				ED2221832021E17C00427606 /* MetalMeshDeformable.swift in Sources */,
 				ED32B9831EB5DC2E000D8823 /* Serializer.swift in Sources */,
 				EDF08DCB1FF3D8BB0036F476 /* toolSelection.swift in Sources */,
 				ED5F81D91F3E6A8E009F9596 /* toolUSD.swift in Sources */,
 				EDA91BC31FF2886600E14B8D /* AAPLTransforms.mm in Sources */,
+				ED2221842021E17C00427606 /* DeformCompute.metal in Sources */,
+				EDCAB6ED201F490200674C38 /* adapterUsd.mm in Sources */,
 				EDA91BC61FF2886600E14B8D /* Shaders.metal in Sources */,
 				ED32B9771EB5D734000D8823 /* Math.swift in Sources */,
 				EDF08DCD1FF3DD340036F476 /* toolGeometry.swift in Sources */,
@@ -328,6 +407,7 @@
 				EDA91BC51FF2886600E14B8D /* RoxigaModel.mm in Sources */,
 				EDA91BC11FF2886600E14B8D /* Renderer.mm in Sources */,
 				ED32B95E1EB5D298000D8823 /* AppDelegate.swift in Sources */,
+				EDCAB6EF201F4D8400674C38 /* toolSketchfab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +475,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D Debug -enable-bridging-pch";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";

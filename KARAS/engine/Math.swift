@@ -32,6 +32,10 @@ extension SCNVector3: Equatable {
 
 extension SCNVector3 {
     
+    var xyz : [CGFloat] {
+        return [self.x, self.y, self.z]
+    }
+    
     func v(_ x: SCNFloat, _ y: SCNFloat, _ z: SCNFloat) -> SCNVector3{
         return SCNVector3(x: x, y: y, z: z)
     }

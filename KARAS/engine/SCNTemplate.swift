@@ -50,6 +50,16 @@ func getNormal(v0: SCNVector3, v1: SCNVector3, v2: SCNVector3) -> SCNVector3 {
     return edgev0v1.cross(vector: edgev1v2)
 }
 
+func createGrid() -> SCNNode {
+    let gridNode = SCNNode()
+    gridNode.name = "grid"
+    let floor = SCNFloor()
+//    floor.firstMaterial?.shaderModifiers
+    floor.width = 100000
+    gridNode.geometry = floor
+    return gridNode
+}
+
 func createCam(name : String) -> SCNNode {
     let cameraNode = SCNNode()
     cameraNode.name = name

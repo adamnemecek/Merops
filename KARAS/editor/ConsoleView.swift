@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ConsoleView : NSView {
+final class ConsoleView : NSView {
     let textview = NSTextField()
     
     init () {

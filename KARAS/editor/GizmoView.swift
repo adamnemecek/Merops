@@ -50,7 +50,7 @@ public class PositionNode: SCNNode {
         let XArrow = SCNNode(geometry: xLine),
                 YArrow = SCNNode(geometry: yLine),
                 ZArrow = SCNNode(geometry: zLine)
-
+        
         XArrow.position.x = offset
         YArrow.position.y = offset
         ZArrow.position.z = offset
@@ -72,7 +72,7 @@ public class PositionNode: SCNNode {
         xBoxNode.pivot = SCNMatrix4MakeRotation(SCNFloat(Double.pi / 2), 0, 0, 1)
         yBoxNode.pivot = SCNMatrix4MakeRotation(SCNFloat(Double.pi / 2), 0, 0, 0)
         zBoxNode.pivot = SCNMatrix4MakeRotation(SCNFloat(Double.pi / 2), -1, 0, 0)
-
+        
         // Plane
         let xyPlane = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 0.05, chamferRadius: 0)),
                 yzPlane = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 0.05, chamferRadius: 0)),
@@ -98,7 +98,10 @@ public class PositionNode: SCNNode {
         yzPlane.geometry?.firstMaterial?.diffuse.contents = Color.yellow
         zxPlane.geometry?.firstMaterial?.diffuse.contents = Color.yellow
 
-
+        [XArrow, YArrow, ZArrow, xBoxNode, yBoxNode, zBoxNode, xyPlane, yzPlane, zxPlane].forEach{
+            $0.castsShadow = false
+        }
+        
         // append
         XArrow.addChildNode(xBoxNode)
         YArrow.addChildNode(yBoxNode)
@@ -108,10 +111,9 @@ public class PositionNode: SCNNode {
         YArrow.addChildNode(yzPlane)
         ZArrow.addChildNode(zxPlane)
 
-
-        self.addChildNode(XArrow)
-        self.addChildNode(YArrow)
-        self.addChildNode(ZArrow)
+        [XArrow, YArrow, ZArrow].forEach {
+            self.addChildNode($0)
+        }
     }
 
     required public init?(coder aDecoder: NSCoder) {

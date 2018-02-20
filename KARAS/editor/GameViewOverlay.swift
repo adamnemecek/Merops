@@ -10,7 +10,7 @@ import SpriteKit
 import SceneKit
 import QuartzCore
 
-class GameViewOverlay: SKScene, SKSceneDelegate, SCNSceneRendererDelegate {
+class GameViewOverlay: SKScene, SKSceneDelegate {
     
     /*
      -------------------------------------------------
@@ -32,9 +32,13 @@ class GameViewOverlay: SKScene, SKSceneDelegate, SCNSceneRendererDelegate {
     var label_position : SKLabelNode!
     var label_rotate : SKLabelNode!
     var label_scale : SKLabelNode!
+    var label_info : SKLabelNode!
+    
+    var button_red : SKShapeNode!
+    var button_blue : SKShapeNode!
+    var button_gleen : SKShapeNode!
     
     init(size: CGSize, view: GameView){
-        
         super.init(size: size)
         self.anchorPoint = .init(x: 0.5, y: 0.5)
         self.scaleMode = .resizeFill
@@ -44,67 +48,48 @@ class GameViewOverlay: SKScene, SKSceneDelegate, SCNSceneRendererDelegate {
         self.label_position = SKLabelNode(fontNamed: "AvenirNext-Bold")
         self.label_rotate = SKLabelNode(fontNamed: "AvenirNext-Bold")
         self.label_scale = SKLabelNode(fontNamed: "AvenirNext-Bold")
+        self.label_info = SKLabelNode(fontNamed: "AvenirNext-Bold")
         
-        self.label_name.fontSize = 8
-        self.label_position.fontSize = 8
-        self.label_rotate.fontSize = 8
-        self.label_scale.fontSize = 8
+        self.label_name.text = "Name"
+        self.label_position.text = "Position"
+        self.label_rotate.text = "Rotate"
+        self.label_scale.text = "Scale"
+        self.label_info.text = "info"
         
-//        view.scene?.rootNode.enumerateChildNodes({ child, _ in
-            self.label_name.text = "name" //child.name
-            self.label_position.text = "position" // String(describing: child.position)
-            self.label_rotate.text = "rotate" // String(describing: child.rotation)
-            self.label_scale.text = "scale" //String(describing: child.scale)
-//        })
+        self.label_info.color = Color.black
         
-        // position
-        for (index, item) in [label_name, label_position, label_rotate, label_scale].enumerated() {
-            item?.horizontalAlignmentMode = .left
-            item?.verticalAlignmentMode = .bottom
-            item?.position = CGPoint(x: -size.width/2 + 20,
-                                     y: size.height/2 - CGFloat(24 * (index + 1))
-            )
-            self.addChild(item!)
+        // property
+        [label_name, label_position, label_rotate, label_scale, label_info].forEach {
+            $0?.fontSize = 12
+            $0?.horizontalAlignmentMode = .left
+            $0?.verticalAlignmentMode = .bottom
+            self.addChild(($0)!)
         }
         
-        // 3D guide
-        let torusGeometry = SCNTorus(ringRadius: 10, pipeRadius: 3)
-        let torusNode = SCNNode(geometry: torusGeometry)
-        torusNode.eulerAngles = SCNVector3(x: CGFloat.pi / 2, y: 0, z: 0)
-        view.scene?.rootNode.addChildNode(torusNode)
-        
         // HUD
-        let redRect = SKShapeNode(
+        button_red = SKShapeNode(
             rectOf: CGSize(width: 16.0, height: 16.0)
         )
-        redRect.position = CGPoint(x: size.width/2 - 18, y: -size.height/2 + 76)
-        redRect.fillColor = Color.red
-        self.addChild(redRect)
+        button_red.name = "red"
+        button_red.fillColor = Color.red
+        self.addChild(button_red)
         
-        let greenRect = SKShapeNode(
+        button_gleen = SKShapeNode(
             rectOf: CGSize(width: 16.0, height: 16.0)
         )
-        greenRect.position = CGPoint(x: size.width/2 - 18, y: -size.height/2 + 52)
-        greenRect.fillColor = Color.green
-        self.addChild(greenRect)
+        button_gleen.name = "green"
+        button_gleen.fillColor = Color.green
+        self.addChild(button_gleen)
         
-        let blueRect = SKShapeNode(
+        button_blue = SKShapeNode(
             rectOf: CGSize(width: 16.0, height: 16.0)
         )
-        blueRect.position = CGPoint(x: size.width/2 - 18, y: -size.height/2 + 28)
-        blueRect.fillColor = Color.blue
-        self.addChild(blueRect)
+        button_blue.name = "blue"
+        button_blue.fillColor = Color.blue
+        self.addChild(button_blue)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func layout2DOverlay() {
-
-    }
-    
-    func layoutButton() {
+    func radialMenu() {
         for i in 0..<4 {
             let btn = SKSpriteNode(color: Color(hue: 0, saturation: 0.8, brightness: 1, alpha: 0.8),
                                    size: CGSize(width: 20, height: 20)
@@ -118,8 +103,24 @@ class GameViewOverlay: SKScene, SKSceneDelegate, SCNSceneRendererDelegate {
         }
     }
     
-    override func didMove(to view: SKView) {
-
+    func headsup (_view: GameView) {
+        let scnScene: SCNScene = {
+            let scnScene = _view.scene
+            
+            let torusGeometry = SCNTorus(ringRadius: 10, pipeRadius: 3)
+            let torusNode = SCNNode(geometry: torusGeometry)
+            torusNode.eulerAngles = SCNVector3(x: CGFloat.pi / 2, y: 0, z: 0)
+            scnScene?.rootNode.addChildNode(torusNode)
+            return scnScene!
+        }()
+        
+        let node = SK3DNode(viewportSize: CGSize(width: 200, height: 200))
+        node.scnScene = scnScene
+        self.addChild(node)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -129,9 +130,5 @@ class GameViewOverlay: SKScene, SKSceneDelegate, SCNSceneRendererDelegate {
 extension SKScene {
     func GetMid() -> CGPoint {
         return CGPoint(x: self.frame.midX, y: self.frame.midY)
-    }
-
-    func GetClick() -> CGPoint {
-        return CGPoint(x: 0, y: 0)
     }
 }

@@ -63,6 +63,8 @@ class USDExporter {
     
     public static func exportFromAsset(scene: SCNScene) -> MDLAsset {
         
+        var keeps : [SCNNode] = []
+        
         // Y-Up
         let asset = MDLAsset(scnScene: scene)
         asset.upAxis = vector_float3([0, 1, 0])
@@ -70,9 +72,16 @@ class USDExporter {
         // add MDLLight and MDLMaterial
         scene.rootNode.enumerateChildNodes({ child, _ in
             if (child.light != nil) {
+                child.removeFromParentNode()
+                keeps.append(child)
 //                let light = MDLAreaLight(scnLight: child.light!)
 //                light.name = (child.light?.name)!
 //                asset.add(light)
+            }
+            
+            if (child.name == "pos" || child.name == "rot" || child.name == "scl") {
+                child.removeFromParentNode()
+                keeps.append(child)
             }
             
             if (child.geometry != nil) {
@@ -89,15 +98,19 @@ class USDExporter {
                 }
             }
         })
-        gitInit(url: "ooo")
+        let ext = "/Users/sumioka_air/Documents/_res/KARASExport"
+        gitInit(url: ext)
+//        gitClone(url: "https://github.com/sho7noka/3d-sh.git", dir: ext)
+//        gitRevert(url: ext)
         
         // export with ascii format
         let exportFile = usdFilePath(fileName: "model.usd")
         try! asset.export(to: exportFile)
         USDCat(infile: exportFile.path, outfile: exportFile.path)
-        
+
         // TODO: バイナリでも追記できるか試してみたい
         write(url: exportFile, text: "\ndef Cube \"cylinder\" {\n}")
+        gitCommit(url: exportFile.absoluteString, msg: "export")
         
         // import from ascii
         scene.rootNode.enumerateChildNodes({ child, _ in
