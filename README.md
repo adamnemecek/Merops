@@ -1,27 +1,13 @@
 # KARAS
-Next Generation DCC  for Mac and iOS.
-[DownLoad](http://github.com)
+Next Generation DCC  for Mac and iOS. [DownLoad](http://github.com)
 
-## 課題
-Metal に向き合う
-移植できる
-応用で作れる
 
-他のソフトが気になることは絶対ある
-シンプル、早い、イテレーションの3軸を絶対の指針にする
-他のソフトと同じことをするならMayaを使えば良い
-
-ml
-noise
-lattice
-edit
-
-#### editor
+## editor
 - style: SpriteKit で HUD の描画
 - core: usd + abc の2枚構成を実現する(add json)
 - USD Export で Model I/O で書き出せない(geometryとマテリアル以外)ものを後変更したい
 
-#### engine
+## engine
 - Metal engine
 - triangleStrip vertex を共有する
 - 2D座標に変換して、その座標感にプリミティブなオブジェクトが存在するかどうか
@@ -43,6 +29,27 @@ edit
 - Simulation
 - Rendering
 
+
+## TODO
+- [x] basic api
+- [ ] github.io
+- [ ] unreal
+do Metal
+移植できる
+応用で作れる
+
+HUDを透明なものに変える
+
+他のソフトが気になることは絶対ある
+シンプル、早い、イテレーションの3軸を絶対の指針にする
+他のソフトと同じことをするならMayaを使えば良い
+
+Swift for TensorFlow
+
+ml
+noise
+lattice
+edit
 
 ## Contribute
 Please Read [Contribute](../Contribute.md) guide.
