@@ -13,56 +13,56 @@ import SceneKit
 import QuartzCore
 
 class GameViewController: SuperViewController, SCNSceneRendererDelegate, SCNNodeRendererDelegate {
-    
+
     // Model
     var scene = SCNScene()
     var render: SCNRenderer!
-    var baseNode:SCNNode? = nil
+    var baseNode: SCNNode? = nil
 
     // View
     @IBOutlet weak var gameView: GameView!
     var console: ConsoleView!
-    var overray : GameViewOverlay!
-    
+    var overray: GameViewOverlay!
+
     // Metal
-    var device:MTLDevice!
+    var device: MTLDevice!
     var commandQueue: MTLCommandQueue!
-    var metalBuffer : MTLCommandBuffer!
-    var metalRenderDescripter : MTLRenderPassDescriptor!
-    var meshData:MetalMeshData!
-    var deformer:MetalMeshDeformer!
-    
+    var metalBuffer: MTLCommandBuffer!
+    var metalRenderDescripter: MTLRenderPassDescriptor!
+    var meshData: MetalMeshData!
+    var deformer: MetalMeshDeformer!
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // HUD keyDown がなくなる
         let size = self.gameView.frame.size
         self.gameView.overlaySKScene = GameViewOverlay(size: size, view: self.gameView)
         overray = self.gameView.overlaySKScene as! GameViewOverlay
         overray.isUserInteractionEnabled = true
+        overray.headsUp(_view: self.gameView)
         self.gameView.viewDidInit()
-        
+
+
         // Console
         console = ConsoleView(frame: self.gameView.frame)
         self.gameView.addSubview(console)
         console.isHidden = true
-        
+
+
         // Metal Render
-        if self.gameView.renderingAPI == SCNRenderingAPI.metal {
-            device = MTLCreateSystemDefaultDevice()
-            deformer = MetalMeshDeformer(device: device)
-            commandQueue = device.makeCommandQueue()
+        device = MTLCreateSystemDefaultDevice()
+        deformer = MetalMeshDeformer(device: device)
+        commandQueue = device.makeCommandQueue()
 //            render = SCNRenderer(device: device, options: nil)
 //            render.scene = scene
-            sceneInit()
-        } else {
-            fatalError("Metal only")
-        }
-        
+        sceneInit()
+
+
         // set the scene to the view
         self.gameView.scene = scene
         self.gameView.allowsCameraControl = true
@@ -77,7 +77,7 @@ class GameViewController: SuperViewController, SCNSceneRendererDelegate, SCNNode
         // Geometry
         scene.rootNode.name = "root"
         newMesh()
-        
+
         // camera ポジションのせいでファイルが消えるので注意
         let grid = createGrid()
         scene.rootNode.addChildNode(grid)
@@ -85,25 +85,25 @@ class GameViewController: SuperViewController, SCNSceneRendererDelegate, SCNNode
         camera.position = SCNVector3(x: 0, y: 5, z: 30)
         let light = createLight(name: "light1")
         scene.rootNode.addChildNode(light)
-        
+
         // asset initialize
-        let asset = USDExporter.exportFromAsset(scene: scene)
-        scene = SCNScene(mdlAsset: asset)
+//        let asset = USDExporter.exportFromAsset(scene: scene)
+//        scene = SCNScene(mdlAsset: asset)
     }
-    
-    //plane's mesh params    
+
+    //plane's mesh params
     private func newMesh() {
         let scnView = self.gameView
-        
+
         meshData = MetalMeshDeformable.buildPlane(device, width: 150, length: 70, step: 1)
         let newNode = SCNNode(geometry: meshData.geometry)
         newNode.geometry?.firstMaterial?.diffuse.contents = Color.blue
         newNode.castsShadow = true
-        
+
         var trans = SCNMatrix4Identity
-        trans = SCNMatrix4Rotate(trans, CGFloat(Float.pi/2), 1, 0, 0)
+        trans = SCNMatrix4Rotate(trans, CGFloat(Float.pi / 2), 1, 0, 0)
         newNode.transform = trans
-        
+
         if let existingNode = baseNode {
             scnView?.scene?.rootNode.replaceChildNode(existingNode, with: newNode)
         } else {
@@ -111,10 +111,9 @@ class GameViewController: SuperViewController, SCNSceneRendererDelegate, SCNNode
         }
         baseNode = newNode
     }
-    
+
     func renderer(_ renderer: SCNSceneRenderer, willRenderScene scene: SCNScene,
-                  atTime time: TimeInterval)
-    {
+                  atTime time: TimeInterval) {
         // deform data
         guard let deformData = self.gameView.deformData else {
             return
@@ -122,17 +121,18 @@ class GameViewController: SuperViewController, SCNSceneRendererDelegate, SCNNode
         deformer.deform(meshData, deformData: self.gameView.deformData!)
         self.gameView.deformData = nil
         return
-        
+
         let viewport = CGRect(x: 0, y: 0, width: self.gameView.frame.width, height: self.gameView.frame.height)
         let renderPassDescriptor = MTLRenderPassDescriptor()
         renderPassDescriptor.colorAttachments[0].loadAction = .clear
-        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(0, 1, 0, 1.0); //green
+        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(0, 1, 0, 1.0);
+        //green
         renderPassDescriptor.colorAttachments[0].storeAction = .store
-        
+
         let commandBuffer = commandQueue.makeCommandBuffer()
 //        let renderEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
 //        renderEncoder?.endEncoding()
-        
+
         // TODO: ジオメトリのバーテックスを渡してMetal シェーダで処理して戻す
 //        scene.rootNode.enumerateChildNodes({child, _ in
 //            child.geometry?.sources(for: .vertex).forEach {

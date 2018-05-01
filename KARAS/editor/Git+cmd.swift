@@ -5,6 +5,7 @@
 //  Created by sumioka-air on 2017/03/26.
 //  Copyright © 2017年 sho sumioka. All rights reserved.
 //
+
 import Cocoa
 import ObjectiveGit
 
@@ -16,11 +17,11 @@ func gitInit(url: String) {
     }
 }
 
-func gitClone(url: String, dir: String ) {
+func gitClone(url: String, dir: String) {
     do {
         try GTRepository.clone(from: URL(string: url)!,
-                               toWorkingDirectory: URL(fileURLWithPath: dir),
-                               options: nil, transferProgressBlock: nil)
+                toWorkingDirectory: URL(fileURLWithPath: dir),
+                options: nil, transferProgressBlock: nil)
     } catch {
         print(error)
     }
@@ -38,7 +39,7 @@ func gitStatus(url: String) {
         try list.forEach {
             if ($0.hasPrefix(".git") == false) {
                 let status = try GTRepository(url: URL(fileURLWithPath: url))
-                    .status(forFile: $0, success: nil, error: nil)
+                        .status(forFile: $0, success: nil, error: nil)
                 print(status)
             }
         }
@@ -50,7 +51,7 @@ func gitStatus(url: String) {
 func gitBranch(url: String) {
     do {
         let repo = try GTRepository(url: URL(fileURLWithPath: url))
-        try print (repo.currentBranch())
+        try print(repo.currentBranch())
         try repo.branches().forEach {
             print($0.name!, $0.shortName!, $0.repository)
         }
@@ -69,7 +70,7 @@ func gitCommit(url: String, msg: String = "update") {
 //        }
         let tree = try index.writeTree()
 //        try repo.createCommit(with: tree, message: msg, parents: parents, updatingReferenceNamed: "HEAD")
-        
+
     } catch {
         print(error)
     }
@@ -83,7 +84,7 @@ func gitDiff(url: String) {
             print(delta.oldFile.path, delta.newFile.path)
         })
     } catch {
-        print (error)
+        print(error)
     }
 }
 
@@ -95,9 +96,9 @@ func gitRevert(url: String) {
             git_revert(repo.git_repository(), com.git_commit(), nil)
         }
     } catch {
-        print (error)
+        print(error)
     }
-    
+
 }
 
 func gitMerge(url: String) {
@@ -105,6 +106,6 @@ func gitMerge(url: String) {
         let repo = try GTRepository(url: URL(fileURLWithPath: url))
         try repo.mergeBranch(intoCurrentBranch: repo.currentBranch())
     } catch {
-        print (error)
+        print(error)
     }
 }

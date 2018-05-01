@@ -9,11 +9,6 @@
 import SpriteKit
 import SceneKit
 
-enum ObjectType : Int {
-    case Shape
-    case Serializer
-}
-
 class GameView: SCNView {
     
     /*
@@ -44,10 +39,9 @@ class GameView: SCNView {
         ory?.label_info.position = CGPoint(x: -size.width/2 + 16, y: size.height/2 - CGFloat(20 * 5))
         
         ory?.button_red.position = CGPoint(x: size.width/2 - 18, y: -size.height/2 + 76)
-        ory?.button_gleen.position = CGPoint(x: size.width/2 - 18, y: -size.height/2 + 52)
+        ory?.button_green.position = CGPoint(x: size.width/2 - 18, y: -size.height/2 + 52)
         ory?.button_blue.position = CGPoint(x: size.width/2 - 18, y: -size.height/2 + 28)
     }
-    
     override func viewWillStartLiveResize() {
         viewDidInit()
     }
@@ -57,7 +51,7 @@ class GameView: SCNView {
     override func viewDidEndLiveResize() {
         viewDidInit()
     }
-    
+
     /*
      * MARK : Mouse Event
      */
@@ -84,19 +78,19 @@ class GameView: SCNView {
         let hitResults = self.hitTest(p, options: options)
         
         // HUD event
-        let skscene = (overlaySKScene as? GameViewOverlay)!
-        let _p = skscene.convertPoint(fromView: event.locationInWindow)
-        switch skscene.nodes(at: _p).first?.name! {
-        
+        let skScene = (overlaySKScene as? GameViewOverlay)!
+        let _p = skScene.convertPoint(fromView: event.locationInWindow)
+        switch skScene.nodes(at: _p).first?.name! {
+
         case "red"?:
-            NSLog("\((overlaySKScene as? GameViewOverlay)?.children)")
-            
+            Builder.Cone(scene: self.scene!)
+
         case "blue"?:
-            NSLog("\((overlaySKScene as? GameViewOverlay)?.children)")
-            
+            Builder.Grid(scene: self.scene!)
+
         case "green"?:
-            NSLog("\((overlaySKScene as? GameViewOverlay)?.children)")
-            
+            Builder.Torus(scene: self.scene!)
+
         default:
             break
         }
@@ -171,10 +165,9 @@ class GameView: SCNView {
                 
                 (overlaySKScene as? GameViewOverlay)?.label_info.isHidden = false
                 (overlaySKScene as? GameViewOverlay)?.label_info.text = "aaa"
-                (overlaySKScene as? GameViewOverlay)?.label_info.position = .init(x: self.frame.width/2, y: self.frame.height/2)
             }
         }
-        self.allowsCameraControl = (hitResults.count == 0)
+//        self.allowsCameraControl = (hitResults.count == 0)
         super.mouseDown(with: event)
     }
     
@@ -393,7 +386,7 @@ class GameView: SCNView {
         case "q":
             self.getModels()
             
-        case "t":
+        case "w":
             self.resetView(_mode: .PositionMode)
             
         case "e":
@@ -415,7 +408,7 @@ class GameView: SCNView {
             self.setPart(_part: .VertexMode)
             
         case "z":
-            //            gitRevert()
+//                        gitRevert()
             return
             
         case "x":
@@ -429,6 +422,7 @@ class GameView: SCNView {
             
         case "":
             self.changeMode()
+
             
         default:
             break
