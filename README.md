@@ -1,6 +1,6 @@
 # Merops
 
-[English](https://translate.google.com/translate?sl=ja&tl=en&u=https://github.com/sho7noka/)
+[English](https://translate.google.com/translate?sl=ja&tl=en&u=https://github.com/sho7noka/Merops)
 
 `Pixar USD`と`libgit`をエディタ内に組み込んだ、次世代型DCCツールの実験プロジェクトです。
 
@@ -26,10 +26,10 @@
 [Contribute](../Contribute.md) を一読ください。
 
 ## Author
-[Sho Sumioka](shosumioka@gmail.com)
+[sho7noka](shosumioka@gmail.com)
 
 ### License
-[BSD](../License.md) です。
+[BSD](../License.md) ライセンスです。
 
 
 ## TODO
@@ -38,15 +38,16 @@
 
 ### editor
 - [x] マウスイベントの回復
+- [x] libgit2 (commit以外)
 - [] style: SpriteKit で 透明 HUD の描画
 - [] TextField からオブジェクトの状態を変更
 - [] iPadに移植
-- [x] libgit2 のコミットが不十分
+
 
 ### engine
-- [ ] テッセレーションとリダクション
-- [ ]
-- [ ] モディファイヤ ml/noise/lattice/edit 
+- [ ] USD 0.85 を組み込む
+- [ ] Metal2 でテッセレーションとリダクション
+- [ ] Metal2 でモディファイヤ ml/noise/lattice/edit 
 - [ ] USD + Alembic の2枚構成を実現(add json)
 - [ ] Model I/O で書き出せないgeometryとマテリアル以外を後変更
 - [ ] intelligent shape (Swift for TensorFlow)
