@@ -1,61 +1,52 @@
-# KARAS
-Next Generation DCC  for Mac and iOS. [DownLoad](http://github.com)
+# Merops
 
+[English](https://translate.google.com/translate?sl=ja&tl=en&u=https://github.com/sho7noka/)
 
-## editor
-- style: SpriteKit で HUD の描画
-- core: usd + abc の2枚構成を実現する(add json)
-- USD Export で Model I/O で書き出せない(geometryとマテリアル以外)ものを後変更したい
-
-## engine
-- Metal engine
-- triangleStrip vertex を共有する
-- 2D座標に変換して、その座標感にプリミティブなオブジェクトが存在するかどうか
+`Pixar USD`と`libgit`をエディタ内に組み込んだ、次世代型DCCツールの実験プロジェクトです。
 
 
 ## Concept
-- simple: widgetless, HUD like game, multiple gestures.
-- iterable: [Pixar USD](https://github.com/PixarAnimationStudios/USD) and [libgit2](https://github.com/libgit2/objective-git).
-- fastest: `Metal2` based Viewport and Modifier.
+シンプル、早い、イテレーションの3軸を指針
 
-### support
+- ウィジェットを極力少なくゲーム画面に近い, multiple gestures.
+- Metal2 ベースの Viewport と Modifier.
+- [Pixar USD](https://github.com/PixarAnimationStudios/USD) と [libgit2](https://github.com/libgit2/objective-git) によるイテレーション
+
+### Support
 - [x] geometry
 - [ ] animation
 - [ ] layout/shot
 
-
-### Not surport
+### Not support
 - lookDev
 - Simulation
 - Rendering
 
-
-## TODO
-- [x] basic api
-- [ ] github.io
-- [ ] unreal
-do Metal
-移植できる
-応用で作れる
-
-HUDを透明なものに変える
-
-他のソフトが気になることは絶対ある
-シンプル、早い、イテレーションの3軸を絶対の指針にする
-他のソフトと同じことをするならMayaを使えば良い
-
-Swift for TensorFlow
-
-ml
-noise
-lattice
-edit
-
-## Contribute
-Please Read [Contribute](../Contribute.md) guide.
+### Contribute
+[Contribute](../Contribute.md) を一読ください。
 
 ## Author
 [Sho Sumioka](shosumioka@gmail.com)
 
-## License
-[MIT](../License.md) License.
+### License
+[BSD](../License.md) です。
+
+
+## TODO
+他のソフトが気になることは絶対ありますが、同じことをするならMayaを使えば良いという考えの下、
+統合ソフトにできない機能を積極的に実装していきます。
+
+### editor
+- [x] マウスイベントの回復
+- [] style: SpriteKit で 透明 HUD の描画
+- [] TextField からオブジェクトの状態を変更
+- [] iPadに移植
+- [x] libgit2 のコミットが不十分
+
+### engine
+- [ ] テッセレーションとリダクション
+- [ ]
+- [ ] モディファイヤ ml/noise/lattice/edit 
+- [ ] USD + Alembic の2枚構成を実現(add json)
+- [ ] Model I/O で書き出せないgeometryとマテリアル以外を後変更
+- [ ] intelligent shape (Swift for TensorFlow)

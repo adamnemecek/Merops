@@ -10,6 +10,8 @@
 import Cocoa
 public typealias SuperViewController = NSViewController
 public typealias Color = NSColor
+public typealias Event = NSEvent
+public typealias View = NSView
 public typealias GestureRecognizer = NSPanGestureRecognizer
 
 @NSApplicationMain
@@ -27,6 +29,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 import UIKit
 public typealias SuperViewController = UIViewController
 public typealias Color = UIColor
+public typealias Event = UIEvent
+public typealias View = UIView
 public typealias GestureRecognizer = UIGestureRecognizer
 
 @UIApplicationMain

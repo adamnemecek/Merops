@@ -1,28 +1,26 @@
+////
+////  Renderer.h
+////  RoxigaEngine
+////
+////  Created by 大西 武 on 2017/06/27.
+////  Copyright © 2017年 大西 武. All rights reserved.
+////
 //
-//  Renderer.h
-//  RoxigaEngine
+//#import <MetalKit/MetalKit.h>
+//#import <simd/simd.h>
+//#import "RoxigaModel.h"
 //
-//  Created by 大西 武 on 2017/06/27.
-//  Copyright © 2017年 大西 武. All rights reserved.
+//@interface Renderer : NSObject <MTKViewDelegate> {
+//@protected
+//    simd::float3 _eye;
+//    simd::float3 _center;
+//    simd::float3 _up;
+//    MTLClearColor _bgColor;
+//}
 //
-
-#import <MetalKit/MetalKit.h>
-#import <simd/simd.h>
-#import "RoxigaModel.h"
-
-// Our platform independent renderer class.   Implements the MTKViewDelegate protocol which
-//   allows it to accept per-frame update and drawable resize callbacks.
-@interface Renderer : NSObject <MTKViewDelegate>
-{
-@protected
-	simd::float3 _eye;
-	simd::float3 _center;
-	simd::float3 _up;
-	MTLClearColor _bgColor;
-}
-
-- (nonnull instancetype)initWithMetalKitView:(nonnull MTKView *)view;
-- (nonnull RoxigaModel*) loadModel:(nonnull id)model;
-
-@end
-
+//- (nonnull instancetype)initWithMetalKitView:(nonnull MTKView *)view;
+//
+//- (nonnull RoxigaModel *)loadModel:(nonnull id)model;
+//
+//@end
+//

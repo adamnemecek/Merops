@@ -2,3 +2,4 @@ github "Alamofire/Alamofire"
 github "SwifterSwift/SwifterSwift" ~> 1.5
 github "Quick/Quick" ~> 1.1.0
 github "libgit2/objective-git"
+github "fromkk/PolyKit"

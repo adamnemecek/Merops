@@ -23,8 +23,6 @@
 // THE SOFTWARE.
 
 #include <metal_stdlib>
-//#include <SceneKit/scn_metal>
-
 using namespace metal;
 
 struct DeformData {
